@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@assest/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.LoginFormController">
+   <children>
+      <Pane layoutX="148.0" layoutY="109.0" prefHeight="382.0" prefWidth="504.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+         <children>
+            <JFXButton layoutX="256.0" layoutY="313.0" prefHeight="29.0" prefWidth="66.0" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="206.0" layoutY="21.0" text="Login">
+               <font>
+                  <Font name="Cambria Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="26.0" fitWidth="53.0" layoutX="82.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assest/images/userName.png" />
+               </image>
+            </ImageView>
+            <JFXTextField labelFloat="true" layoutX="191.0" layoutY="113.0" prefHeight="26.0" prefWidth="242.0" promptText="User Name">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField labelFloat="true" layoutX="191.0" layoutY="180.0" prefHeight="26.0" prefWidth="242.0" promptText="Password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <ImageView fitHeight="26.0" fitWidth="53.0" layoutX="82.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assest/images/password.png" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="244.0" layoutY="246.0" prefHeight="44.0" prefWidth="139.0" stylesheets="@assest/styles/styles.css" text="Login" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button" />
+                  <String fx:value="button1" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="160.0" layoutY="317.0" text="Not a member ?">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

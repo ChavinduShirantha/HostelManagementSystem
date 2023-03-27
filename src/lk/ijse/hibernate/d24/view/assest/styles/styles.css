@@ -1,0 +1,20 @@
+.background
+{
+    -fx-background-color: linear-gradient(to left,cornflowerblue,purple);
+}
+
+.button
+{
+    -fx-background-color: linear-gradient(to left,cornflowerblue,purple);
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px 0px 4px 4px;
+}
+
+.button2
+{
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px 0px 4px 4px;
+}
