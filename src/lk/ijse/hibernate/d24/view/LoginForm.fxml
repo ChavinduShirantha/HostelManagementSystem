@@ -15,12 +15,12 @@
    <children>
       <Pane layoutX="148.0" layoutY="109.0" prefHeight="382.0" prefWidth="504.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
-            <JFXButton layoutX="256.0" layoutY="313.0" prefHeight="29.0" prefWidth="66.0" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
+            <JFXButton layoutX="257.0" layoutY="311.0" prefHeight="34.0" prefWidth="82.0" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </JFXButton>
             <Label layoutX="206.0" layoutY="21.0" text="Login">
@@ -62,7 +62,7 @@
             </JFXButton>
             <Label layoutX="160.0" layoutY="317.0" text="Not a member ?">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font name="System Bold" size="14.0" />
                </font>
             </Label>
          </children>
