@@ -2,7 +2,7 @@ package lk.ijse.hibernate.d24.controller;
 
 /**
  * @author : Chavindu
- * created : 3/27/2023-6:34 PM
+ * created : 3/28/2023-10:46 AM
  **/
-public class MainFormController {
+public class RoomFormController {
 }

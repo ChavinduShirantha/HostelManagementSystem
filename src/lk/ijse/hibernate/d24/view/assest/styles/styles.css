@@ -18,3 +18,22 @@
     -fx-border-color: transparent;
     -fx-border-width: 0px 0px 4px 4px;
 }
+
+.dashboard{
+    -fx-background-color: white;
+}
+
+.mainbar{
+    -fx-background-color: linear-gradient(to right,cornflowerblue,white);
+}
+
+.menubar{
+    -fx-background-color: #ecf0f1;
+}
+.logoutbutton{
+    -fx-background-color: transparent;
+}
+
+.menubutton{
+    -fx-background-color: transparent;
+}

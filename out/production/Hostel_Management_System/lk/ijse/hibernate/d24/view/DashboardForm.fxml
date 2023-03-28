@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" prefHeight="1000.0" prefWidth="1800.0" styleClass="dashboard" stylesheets="@assest/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.DashboardFormController">
+   <children>
+      <Pane layoutX="1.0" layoutY="48.0" prefHeight="950.0" prefWidth="1800.0">
+         <children>
+            <Label layoutX="780.0" layoutY="19.0" text="Dashboard">
+               <font>
+                  <Font name="Cambria Bold" size="48.0" />
+               </font>
+            </Label>
+            <Pane layoutX="-1.0" layoutY="1.0" prefHeight="950.0" prefWidth="100.0" styleClass="menubar" stylesheets="@assest/styles/styles.css" />
+            <JFXButton layoutX="6.0" layoutY="69.0" prefHeight="60.0" prefWidth="60.0" styleClass="menubutton" stylesheets="@assest/styles/styles.css" text=".">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assest/images/menu.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane prefHeight="50.0" prefWidth="1800.0" styleClass="mainbar" stylesheets="@assest/styles/styles.css">
+         <children>
+            <Label fx:id="lblTime" layoutX="1259.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0">
+               <font>
+                  <Font name="Cambria Bold" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="1532.0" layoutY="3.0" prefHeight="30.0" prefWidth="200.0">
+               <font>
+                  <Font name="Cambria Bold" size="36.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnLogout" layoutX="38.0" onAction="#LogoutOnAction" styleClass="logoutbutton" stylesheets="@assest/styles/styles.css" text="Log out">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assest/images/logouticon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

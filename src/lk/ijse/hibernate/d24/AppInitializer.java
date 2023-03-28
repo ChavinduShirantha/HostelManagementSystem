@@ -33,10 +33,5 @@ public class AppInitializer extends Application {
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
         primaryStage.show();
-        /*primaryStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/lk/ijse/hibernate/d24/view/LoginForm.fxml"))));
-        primaryStage.setResizable(false);
-        primaryStage.setTitle("D24 Hostel");
-        primaryStage.centerOnScreen();
-        primaryStage.show();*/
     }
 }
