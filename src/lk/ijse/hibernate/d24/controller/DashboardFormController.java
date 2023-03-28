@@ -31,6 +31,8 @@ public class DashboardFormController {
     public JFXButton btnManageStudent;
     public JFXButton btnDashbord;
     public AnchorPane pane1;
+    public JFXButton btnManageRoom;
+    public Pane panetxtManageRoom;
 
     public void initialize() {
         loadDate();
@@ -87,5 +89,17 @@ public class DashboardFormController {
 
     public void btnManageStudentOnAction(ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.Student, pane1);
+    }
+
+    public void btnManageRoomOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.Room,pane1);
+    }
+
+    public void btnManageRoomOnAction1(MouseEvent mouseEvent) {
+        panetxtManageRoom.setVisible(true);
+    }
+
+    public void btnManageRoomOnAction2(MouseEvent mouseEvent) {
+        panetxtManageRoom.setVisible(false);
     }
 }

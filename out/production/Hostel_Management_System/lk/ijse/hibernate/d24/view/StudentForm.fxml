@@ -4,10 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.StudentFormController">
    <children>
-      <Label layoutX="646.0" layoutY="29.0" text="Manage Student">
+      <Label layoutX="672.0" layoutY="30.0" text="Manage Student">
          <font>
             <Font name="Cambria Bold" size="48.0" />
          </font>

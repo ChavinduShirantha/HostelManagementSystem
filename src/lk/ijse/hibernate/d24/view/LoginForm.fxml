@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="pane" prefHeight="1000.0" prefWidth="1800.0" styleClass="background" stylesheets="@assest/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.LoginFormController">
    <children>
-      <Pane layoutX="969.0" layoutY="221.0" prefHeight="573.0" prefWidth="696.0" style="-fx-background-color: white; -fx-background-radius: 20;">
+      <Pane layoutX="995.0" layoutY="242.0" opacity="0.8" prefHeight="573.0" prefWidth="696.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
             <JFXButton fx:id="btnSignUp" alignment="CENTER" layoutX="384.0" layoutY="471.0" onAction="#btnSignUpOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
                <cursor>
@@ -23,27 +23,27 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </JFXButton>
-            <Label layoutX="303.0" layoutY="29.0" text="Login">
+            <Label layoutX="195.0" layoutY="23.0" text="Sign in your Account">
                <font>
                   <Font name="Cambria Bold" size="36.0" />
                </font>
             </Label>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="115.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="85.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assest/images/userName.png" />
                </image>
             </ImageView>
-            <JFXTextField labelFloat="true" layoutX="282.0" layoutY="155.0" prefHeight="26.0" prefWidth="300.0" promptText="User Name">
+            <JFXTextField labelFloat="true" layoutX="238.0" layoutY="155.0" prefHeight="26.0" prefWidth="400.0" promptText="User Name">
                <font>
                   <Font size="24.0" />
                </font>
             </JFXTextField>
-            <JFXTextField labelFloat="true" layoutX="281.0" layoutY="257.0" prefHeight="26.0" prefWidth="300.0" promptText="Password">
+            <JFXTextField labelFloat="true" layoutX="237.0" layoutY="257.0" prefHeight="26.0" prefWidth="400.0" promptText="Password">
                <font>
                   <Font size="24.0" />
                </font>
             </JFXTextField>
-            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="117.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="90.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@assest/images/password.png" />
                </image>
@@ -67,5 +67,15 @@
             </Label>
          </children>
       </Pane>
+      <ImageView fitHeight="603.0" fitWidth="874.0" layoutX="65.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assest/images/LoginImage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="623.0" layoutY="22.0" prefHeight="94.0" prefWidth="639.0" text="Welcome D24 Hostel" textFill="#dfc6ff">
+         <font>
+            <Font name="System Bold Italic" size="64.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
