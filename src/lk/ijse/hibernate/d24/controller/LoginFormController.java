@@ -15,8 +15,13 @@ import java.io.IOException;
 public class LoginFormController {
     public AnchorPane pane;
     public JFXButton btnLogin;
+    public JFXButton btnSignUp;
 
     public void LoginOnAction(ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.Dashboard, pane);
+    }
+
+    public void btnSignUpOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.Signup,pane);
     }
 }

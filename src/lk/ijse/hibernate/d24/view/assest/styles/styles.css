@@ -37,3 +37,7 @@
 .menubutton{
     -fx-background-color: transparent;
 }
+
+.createNewAccount{
+    -fx-background-color: white;
+}

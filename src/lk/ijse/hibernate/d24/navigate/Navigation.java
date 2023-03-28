@@ -34,6 +34,10 @@ public class Navigation {
                 window.setTitle("Room Form");
                 initUI("RoomForm.fxml");
                 break;
+            case Signup:
+                window.setTitle("Create New Account Form");
+                initUI("SignUpForm.fxml");
+                break;
         }
     }
 

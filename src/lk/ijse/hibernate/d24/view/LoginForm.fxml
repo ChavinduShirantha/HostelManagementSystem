@@ -15,7 +15,7 @@
    <children>
       <Pane layoutX="969.0" layoutY="221.0" prefHeight="573.0" prefWidth="696.0" style="-fx-background-color: white; -fx-background-radius: 20;">
          <children>
-            <JFXButton alignment="CENTER" layoutX="384.0" layoutY="471.0" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
+            <JFXButton fx:id="btnSignUp" alignment="CENTER" layoutX="384.0" layoutY="471.0" onAction="#btnSignUpOnAction" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: white;" styleClass="button2" stylesheets="@assest/styles/styles.css" text="Sign Up" textFill="#1a4bff" underline="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
