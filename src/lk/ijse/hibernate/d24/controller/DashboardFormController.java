@@ -4,7 +4,9 @@ import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
@@ -22,6 +24,13 @@ public class DashboardFormController {
     public Label lblDate;
     public JFXButton btnLogout;
     public AnchorPane pane;
+    public Pane menubar;
+    public Pane btnDashboard;
+    public Pane panetxtDashboard;
+    public Pane panetxtManageStudent;
+    public JFXButton btnManageStudent;
+    public JFXButton btnDashbord;
+    public AnchorPane pane1;
 
     public void initialize() {
         loadDate();
@@ -54,5 +63,29 @@ public class DashboardFormController {
 
     public void LogoutOnAction(ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.Login, pane);
+    }
+
+    public void btnDashBoardOnAction1(MouseEvent mouseEvent) {
+        panetxtDashboard.setVisible(true);
+    }
+
+    public void btnDashBoardOnAction2(MouseEvent mouseEvent) {
+        panetxtDashboard.setVisible(false);
+    }
+
+    public void btnManageStudentOnAction1(MouseEvent mouseEvent) {
+        panetxtManageStudent.setVisible(true);
+    }
+
+    public void btnManageStudentOnAction2(MouseEvent mouseEvent) {
+        panetxtManageStudent.setVisible(false);
+    }
+
+    public void btnDashBoardOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.Dashboard, pane);
+    }
+
+    public void btnManageStudentOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.Student, pane1);
     }
 }
