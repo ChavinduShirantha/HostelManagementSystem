@@ -13,19 +13,19 @@
    <children>
       <Pane fx:id="btnDashboard" layoutX="1.0" layoutY="48.0" prefHeight="950.0" prefWidth="1800.0">
          <children>
-            <Pane fx:id="menubar" layoutX="-1.0" layoutY="1.0" prefHeight="950.0" prefWidth="100.0" styleClass="menubar" stylesheets="@assest/styles/styles.css" />
-            <JFXButton fx:id="btnDashbord" layoutX="6.0" layoutY="69.0" onAction="#btnDashBoardOnAction" onMouseEntered="#btnDashBoardOnAction1" onMouseExited="#btnDashBoardOnAction2" prefHeight="60.0" prefWidth="60.0" styleClass="menubutton" stylesheets="@assest/styles/styles.css" text=".">
-               <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+            <Pane fx:id="menubar" layoutX="-1.0" layoutY="1.0" prefHeight="950.0" prefWidth="100.0" styleClass="menubar" stylesheets="@assest/styles/styles.css">
+               <children>
+                  <ImageView fx:id="imgStudent" fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="200.0" onMouseClicked="#manageStudentOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@assest/images/menu.png" />
+                        <Image url="@assest/images/manageStudent.png" />
                      </image>
                   </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
+                  <ImageView fx:id="imgRoom" fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="330.0" onMouseClicked="#manageRoomOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assest/images/room.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
             <Pane fx:id="panetxtDashboard" layoutX="105.0" layoutY="83.0" prefHeight="53.0" prefWidth="195.0" visible="false">
                <children>
                   <Label text="Dashboard">
@@ -35,18 +35,6 @@
                   </Label>
                </children>
             </Pane>
-            <JFXButton fx:id="btnManageStudent" layoutX="6.0" layoutY="192.0" onAction="#btnManageStudentOnAction" onMouseEntered="#btnManageStudentOnAction1" onMouseExited="#btnManageStudentOnAction2" prefHeight="60.0" prefWidth="60.0" styleClass="menubutton" stylesheets="@assest/styles/styles.css" text=".">
-               <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@assest/images/manageStudent.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
             <Pane fx:id="panetxtManageStudent" layoutX="111.0" layoutY="200.0" prefHeight="53.0" prefWidth="296.0" visible="false">
                <children>
                   <Label layoutY="2.0" text="Manage Students">
@@ -65,18 +53,6 @@
                   </Label>
                </children>
             </AnchorPane>
-            <JFXButton fx:id="btnManageRoom" layoutX="6.0" layoutY="322.0" onAction="#btnManageRoomOnAction" onMouseEntered="#btnManageRoomOnAction1" onMouseExited="#btnManageRoomOnAction2" prefHeight="60.0" prefWidth="60.0" styleClass="menubutton" stylesheets="@assest/styles/styles.css" text=".">
-               <graphic>
-                  <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@assest/images/room.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
             <Pane fx:id="panetxtManageRoom" layoutX="115.0" layoutY="328.0" prefHeight="53.0" prefWidth="255.0" visible="false">
                <children>
                   <Label layoutY="2.0" text="Manage Rooms">
@@ -86,6 +62,14 @@
                   </Label>
                </children>
             </Pane>
+            <ImageView fx:id="imgDashBoard" fitHeight="60.0" fitWidth="60.0" layoutX="19.0" layoutY="80.0" onMouseClicked="#dashboardOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@assest/images/menu.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
          </children>
       </Pane>
       <Pane prefHeight="50.0" prefWidth="1800.0" styleClass="mainbar" stylesheets="@assest/styles/styles.css">

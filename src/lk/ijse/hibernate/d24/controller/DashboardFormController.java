@@ -1,12 +1,17 @@
 package lk.ijse.hibernate.d24.controller;
 
 import com.jfoenix.controls.JFXButton;
+import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
@@ -28,11 +33,12 @@ public class DashboardFormController {
     public Pane btnDashboard;
     public Pane panetxtDashboard;
     public Pane panetxtManageStudent;
-    public JFXButton btnManageStudent;
-    public JFXButton btnDashbord;
     public AnchorPane pane1;
     public JFXButton btnManageRoom;
     public Pane panetxtManageRoom;
+    public ImageView imgDashBoard;
+    public ImageView imgStudent;
+    public ImageView imgRoom;
 
     public void initialize() {
         loadDate();
@@ -67,39 +73,68 @@ public class DashboardFormController {
         Navigation.navigate(Routes.Login, pane);
     }
 
-    public void btnDashBoardOnAction1(MouseEvent mouseEvent) {
-        panetxtDashboard.setVisible(true);
+    public void btnManageRoomOnAction(ActionEvent actionEvent) throws IOException {
+        Navigation.navigate(Routes.Room, pane1);
     }
 
-    public void btnDashBoardOnAction2(MouseEvent mouseEvent) {
-        panetxtDashboard.setVisible(false);
-    }
-
-    public void btnManageStudentOnAction1(MouseEvent mouseEvent) {
-        panetxtManageStudent.setVisible(true);
-    }
-
-    public void btnManageStudentOnAction2(MouseEvent mouseEvent) {
-        panetxtManageStudent.setVisible(false);
-    }
-
-    public void btnDashBoardOnAction(ActionEvent actionEvent) throws IOException {
+    public void dashboardOnAction(MouseEvent mouseEvent) throws IOException {
         Navigation.navigate(Routes.Dashboard, pane);
     }
 
-    public void btnManageStudentOnAction(ActionEvent actionEvent) throws IOException {
+    public void playMouseEnterAnimation(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) mouseEvent.getSource();
+
+            switch (icon.getId()) {
+                case "imgDashBoard":
+                    panetxtDashboard.setVisible(true);
+                    break;
+                case "imgStudent":
+                    panetxtManageStudent.setVisible(true);
+                    break;
+                case "imgRoom":
+                    panetxtManageRoom.setVisible(true);
+                    break;
+                /*case "imgViewOrders":
+
+                    break;*/
+            }
+
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+            scaleT.setToX(1.2);
+            scaleT.setToY(1.2);
+            scaleT.play();
+
+            DropShadow glow = new DropShadow();
+            glow.setColor(Color.CORNFLOWERBLUE);
+            glow.setWidth(20);
+            glow.setHeight(20);
+            glow.setRadius(20);
+            icon.setEffect(glow);
+        }
+
+    }
+
+    public void playMouseExitAnimation(MouseEvent mouseEvent) {
+        if (mouseEvent.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) mouseEvent.getSource();
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+            scaleT.setToX(1);
+            scaleT.setToY(1);
+            scaleT.play();
+
+            icon.setEffect(null);
+            panetxtDashboard.setVisible(false);
+            panetxtManageStudent.setVisible(false);
+            panetxtManageRoom.setVisible(false);
+        }
+
+    }
+
+    public void manageStudentOnAction(MouseEvent mouseEvent) throws IOException {
         Navigation.navigate(Routes.Student, pane1);
     }
 
-    public void btnManageRoomOnAction(ActionEvent actionEvent) throws IOException {
-        Navigation.navigate(Routes.Room,pane1);
-    }
-
-    public void btnManageRoomOnAction1(MouseEvent mouseEvent) {
-        panetxtManageRoom.setVisible(true);
-    }
-
-    public void btnManageRoomOnAction2(MouseEvent mouseEvent) {
-        panetxtManageRoom.setVisible(false);
+    public void manageRoomOnAction(MouseEvent mouseEvent) {
     }
 }
