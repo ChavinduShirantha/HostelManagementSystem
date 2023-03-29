@@ -1,37 +1,24 @@
-package lk.ijse.hibernate.d24.entity;
+package lk.ijse.hibernate.d24.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  * @author : Chavindu
- * created : 3/29/2023-9:24 AM
+ * created : 3/29/2023-10:09 AM
  **/
-@Entity
-@Table(name = "student")
-public class Student implements Serializable {
-    @Id
-    @Column(name = "student_id")
+public class StudentDTO implements Serializable {
     private String std_id;
-    @Column(name = "name")
     private String name;
-    @Column(name = "address")
     private String address;
-    @Column(name = "contact_no")
     private String contact;
-    @Column(name = "dob")
     private LocalDate dob;
-    @Column(name = "gender")
     private String gender;
 
-    public Student() {
+    public StudentDTO() {
     }
 
-    public Student(String std_id, String name, String address, String contact, LocalDate dob, String gender) {
+    public StudentDTO(String std_id, String name, String address, String contact, LocalDate dob, String gender) {
         this.std_id = std_id;
         this.name = name;
         this.address = address;
@@ -72,11 +59,11 @@ public class Student implements Serializable {
         this.contact = contact;
     }
 
-    public LocalDate getDate() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDate(LocalDate dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
@@ -90,7 +77,7 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return "StudentDTO{" +
                 "std_id='" + std_id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
