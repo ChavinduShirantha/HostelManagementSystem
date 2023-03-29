@@ -1,13 +1,12 @@
-package lk.ijse.hibernate.d24.dto;
+package lk.ijse.hibernate.d24.view.tdm;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
  * @author : Chavindu
- * created : 3/29/2023-10:09 AM
+ * created : 3/29/2023-10:44 AM
  **/
-public class StudentDTO {
+public class StudentTM {
     private String std_id;
     private String name;
     private String address;
@@ -15,10 +14,10 @@ public class StudentDTO {
     private String dob;
     private String gender;
 
-    public StudentDTO() {
+    public StudentTM() {
     }
 
-    public StudentDTO(String std_id, String name, String address, String contact, String dob, String gender) {
+    public StudentTM(String std_id, String name, String address, String contact, String dob, String gender) {
         this.std_id = std_id;
         this.name = name;
         this.address = address;
@@ -77,7 +76,7 @@ public class StudentDTO {
 
     @Override
     public String toString() {
-        return "StudentDTO{" +
+        return "StudentTM{" +
                 "std_id='" + std_id + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
@@ -86,5 +85,4 @@ public class StudentDTO {
                 ", gender='" + gender + '\'' +
                 '}';
     }
-
 }

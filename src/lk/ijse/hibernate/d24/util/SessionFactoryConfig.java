@@ -5,25 +5,32 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import java.io.IOException;
+import java.util.Properties;
+
 /**
  * @author : Chavindu
  * created : 3/29/2023-9:22 AM
  **/
 public class SessionFactoryConfig {
-    private static SessionFactoryConfig factoryConfiguration;
+    private static SessionFactoryConfig factoryConfig;
     private final SessionFactory sessionFactory;
 
     private SessionFactoryConfig() {
-        sessionFactory = new Configuration()
-                .mergeProperties(Utility.getProperties())
-                .addAnnotatedClass(Student.class)
-                .buildSessionFactory();
+
+        Configuration config = new Configuration().addAnnotatedClass(Student.class);
+        sessionFactory = config.buildSessionFactory();
+        Properties properties = new Properties();
+        try {
+            properties.load(ClassLoader.getSystemClassLoader().getResourceAsStream("hibernate.properties"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public static SessionFactoryConfig getInstance() {
-        return (null == factoryConfiguration)
-                ? factoryConfiguration = new SessionFactoryConfig()
-                : factoryConfiguration;
+        return factoryConfig == null ? factoryConfig = new SessionFactoryConfig() : factoryConfig;
     }
 
     public Session getSession() {

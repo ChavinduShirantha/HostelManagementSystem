@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -11,5 +17,47 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
+      <TableView fx:id="tblStdDetails" layoutX="150.0" layoutY="481.0" prefHeight="395.0" prefWidth="1410.0">
+        <columns>
+          <TableColumn prefWidth="200.0" text="Student Id" />
+          <TableColumn minWidth="6.4000244140625" prefWidth="300.0" text="Name" />
+            <TableColumn prefWidth="300.0" text="Address" />
+            <TableColumn prefWidth="200.0" text="Contact No" />
+            <TableColumn prefWidth="200.0" text="DOB" />
+            <TableColumn prefWidth="200.0" text="Gender" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtStdId" labelFloat="true" layoutX="150.0" layoutY="126.0" prefHeight="52.0" prefWidth="276.0" promptText="Student ID">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="702.0" layoutY="126.0" prefHeight="52.0" prefWidth="276.0" promptText="Name">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="1271.0" layoutY="126.0" prefHeight="52.0" prefWidth="276.0" promptText="Address">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="150.0" layoutY="249.0" prefHeight="52.0" prefWidth="276.0" promptText="Contact No">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <DatePicker fx:id="dpDate" layoutX="702.0" layoutY="249.0" prefHeight="52.0" prefWidth="276.0" promptText="DOB" />
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="1271.0" layoutY="249.0" onAction="#cmbGender" prefHeight="52.0" prefWidth="276.0" promptText="Gender" />
+      <JFXButton fx:id="btnAdd" layoutX="1205.0" layoutY="370.0" onAction="#btnAddOnAction" text="Add Student">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="1443.0" layoutY="370.0" onAction="#btnClearOnAction" text="Clear">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
