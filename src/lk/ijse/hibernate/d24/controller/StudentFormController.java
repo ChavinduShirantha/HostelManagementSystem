@@ -32,10 +32,10 @@ public class StudentFormController {
     public JFXButton btnAdd;
     public JFXButton btnClear;
     public DatePicker dpDate;
-
-    private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
     public JFXButton btnAddId;
 
+
+    private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
 
     public void initialize() throws IOException {
         tblStdDetails.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("std_id"));
@@ -149,6 +149,4 @@ public class StudentFormController {
 
     }
 
-    public void btnAddIdOnAction(ActionEvent actionEvent) {
-    }
 }
