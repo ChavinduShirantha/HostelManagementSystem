@@ -1,5 +1,7 @@
 package lk.ijse.hibernate.d24.view.tdm;
 
+import java.time.LocalDate;
+
 /**
  * @author : Chavindu
  * created : 3/29/2023-10:44 AM
@@ -9,13 +11,13 @@ public class StudentTM {
     private String name;
     private String address;
     private String contact;
-    private String dob;
+    private LocalDate dob;
     private String gender;
 
     public StudentTM() {
     }
 
-    public StudentTM(String std_id, String name, String address, String contact, String dob, String gender) {
+    public StudentTM(String std_id, String name, String address, String contact, LocalDate dob, String gender) {
         this.std_id = std_id;
         this.name = name;
         this.address = address;
@@ -23,6 +25,7 @@ public class StudentTM {
         this.dob = dob;
         this.gender = gender;
     }
+
 
     public String getStd_id() {
         return std_id;
@@ -56,11 +59,11 @@ public class StudentTM {
         this.contact = contact;
     }
 
-    public String getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 

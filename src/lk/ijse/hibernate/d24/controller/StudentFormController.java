@@ -59,7 +59,7 @@ public class StudentFormController {
                 txtName.setText(newValue.getName());
                 txtAddress.setText(newValue.getAddress());
                 txtContact.setText(newValue.getContact());
-                dpDate.setValue(LocalDate.parse(newValue.getDob()));
+                dpDate.setValue(newValue.getDob());
                 cmbGender.setValue(newValue.getGender());
 
             }
@@ -73,7 +73,7 @@ public class StudentFormController {
         String name = txtName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
-        String date = String.valueOf(dpDate.getValue());
+        LocalDate date = dpDate.getValue();
         String gender = String.valueOf(cmbGender.getValue());
 
 

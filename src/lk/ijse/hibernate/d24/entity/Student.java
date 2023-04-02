@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 /**
  * @author : Chavindu
@@ -22,14 +23,14 @@ public class Student implements SuperEntity {
     @Column(name = "contact")
     private String contact;
     @Column(name = "dob")
-    private String dob;
+    private LocalDate dob;
     @Column(name = "gender")
     private String gender;
 
     public Student() {
     }
 
-    public Student(String std_id, String name, String address, String contact, String dob, String gender) {
+    public Student(String std_id, String name, String address, String contact, LocalDate dob, String gender) {
         this.std_id = std_id;
         this.name = name;
         this.address = address;
@@ -37,6 +38,7 @@ public class Student implements SuperEntity {
         this.dob = dob;
         this.gender = gender;
     }
+
 
     public String getStd_id() {
         return std_id;
@@ -70,11 +72,11 @@ public class Student implements SuperEntity {
         this.contact = contact;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return dob;
     }
 
-    public void setDate(String dob) {
+    public void setDate(LocalDate dob) {
         this.dob = dob;
     }
 
