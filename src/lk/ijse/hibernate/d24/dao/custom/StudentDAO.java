@@ -8,5 +8,6 @@ import lk.ijse.hibernate.d24.entity.Student;
  * created : 3/29/2023-10:50 AM
  **/
 public interface StudentDAO extends CrudDAO<Student, String> {
+    int getStudentCount();
 
 }

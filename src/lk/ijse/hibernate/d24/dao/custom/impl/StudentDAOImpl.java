@@ -66,6 +66,16 @@ public class StudentDAOImpl implements StudentDAO {
         return list;
     }
 
+    @Override
+    public int getStudentCount() {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction t1 = session.beginTransaction();
 
+        Query q1=session.createQuery("SELECT COUNT(std_id) FROM Student");
+        int count= (int) q1.uniqueResult();
 
+        t1.commit();
+        session.close();
+        return count;
+    }
 }

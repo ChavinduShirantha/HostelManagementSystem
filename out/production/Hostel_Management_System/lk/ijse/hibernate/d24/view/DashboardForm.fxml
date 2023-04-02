@@ -57,6 +57,11 @@
                         <Font name="Cambria Bold" size="48.0" />
                      </font>
                   </Label>
+                  <Label fx:id="lblCount" layoutX="431.0" layoutY="250.0" prefHeight="168.0" prefWidth="342.0" text="Label">
+                     <font>
+                        <Font size="96.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <Pane fx:id="panetxtManageRoom" layoutX="115.0" layoutY="328.0" prefHeight="53.0" prefWidth="255.0" visible="false">
@@ -80,7 +85,7 @@
       </Pane>
       <Pane prefHeight="50.0" prefWidth="1800.0" styleClass="mainbar" stylesheets="@assest/styles/styles.css">
          <children>
-            <Label fx:id="lblTime" layoutX="1259.0" layoutY="4.0" prefHeight="30.0" prefWidth="200.0">
+            <Label fx:id="lblTime" layoutX="1209.0" layoutY="4.0" prefHeight="30.0" prefWidth="300.0">
                <font>
                   <Font name="Cambria Bold" size="36.0" />
                </font>

@@ -12,10 +12,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+import lk.ijse.hibernate.d24.bo.BOFactory;
+import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -39,10 +42,14 @@ public class DashboardFormController {
     public ImageView imgDashBoard;
     public ImageView imgStudent;
     public ImageView imgRoom;
+    public Label lblCount;
 
+
+    private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
     public void initialize() {
         loadDate();
         loadTime();
+
     }
 
     public void loadDate() {
@@ -51,7 +58,7 @@ public class DashboardFormController {
 
     public void loadTime() {
         Thread thread = new Thread(() -> {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss");
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm:ss aa");
             while (true) {
                 try {
                     Thread.sleep(1000);
@@ -138,4 +145,5 @@ public class DashboardFormController {
     public void manageRoomOnAction(MouseEvent mouseEvent) throws IOException {
         Navigation.navigate(Routes.Room, pane1);
     }
+
 }

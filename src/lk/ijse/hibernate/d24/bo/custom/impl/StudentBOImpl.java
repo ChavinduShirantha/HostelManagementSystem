@@ -30,6 +30,10 @@ public class StudentBOImpl implements StudentBO {
         return studentDAO.delete(id);
     }
 
+    @Override
+    public int countStudent() {
+        return studentDAO.getStudentCount();
+    }
 
     @Override
     public ArrayList<StudentDTO> getAllStudent() {
