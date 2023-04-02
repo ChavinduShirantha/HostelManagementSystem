@@ -1,6 +1,7 @@
 package lk.ijse.hibernate.d24.dao;
 
 import lk.ijse.hibernate.d24.dao.custom.impl.StudentDAOImpl;
+import lk.ijse.hibernate.d24.dao.custom.impl.UserDAOImpl;
 
 /**
  * @author : Chavindu
@@ -17,13 +18,15 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENT
+        STUDENT, USER
     }
 
     public SuperDAO getDAO(DAOTypes types) {
         switch (types) {
             case STUDENT:
                 return new StudentDAOImpl();
+            case USER:
+                return new UserDAOImpl();
             default:
                 return null;
         }

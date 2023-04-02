@@ -6,7 +6,7 @@ import lk.ijse.hibernate.d24.dao.custom.StudentDAO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.Student;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -18,5 +18,36 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean saveStudent(Student dto) {
         return studentDAO.save(new Student(dto.getStd_id(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getDate(), dto.getGender()));
+    }
+
+    @Override
+    public boolean updateStudent(Student dto) {
+        return studentDAO.update(new Student(dto.getStd_id(), dto.getName(), dto.getAddress(), dto.getContact(), dto.getDate(), dto.getGender()));
+    }
+
+    @Override
+    public boolean deleteStudent(String id) {
+        return studentDAO.delete(id);
+    }
+
+
+    @Override
+    public ArrayList<StudentDTO> getAllStudent() {
+        ArrayList<Student> all = studentDAO.getAll();
+
+        ArrayList<StudentDTO> allStudent = new ArrayList<>();
+
+        for (Student student : all) {
+            allStudent.add(new StudentDTO(
+                    student.getStd_id(),
+                    student.getName(),
+                    student.getAddress(),
+                    student.getContact(),
+                    student.getDate(),
+                    student.getGender()
+            ));
+        }
+
+        return allStudent;
     }
 }

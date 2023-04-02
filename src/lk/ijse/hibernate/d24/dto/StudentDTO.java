@@ -1,8 +1,5 @@
 package lk.ijse.hibernate.d24.dto;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-
 /**
  * @author : Chavindu
  * created : 3/29/2023-10:09 AM

@@ -19,11 +19,17 @@
                      <image>
                         <Image url="@assest/images/manageStudent.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <ImageView fx:id="imgRoom" fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="330.0" onMouseClicked="#manageRoomOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@assest/images/room.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                </children></Pane>
             <Pane fx:id="panetxtDashboard" layoutX="105.0" layoutY="83.0" prefHeight="53.0" prefWidth="195.0" visible="false">

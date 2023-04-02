@@ -41,3 +41,19 @@
 .createNewAccount{
     -fx-background-color: white;
 }
+
+.button3
+{
+    -fx-background-color: red;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px 0px 4px 4px;
+}
+
+.button4
+{
+    -fx-background-color: green;
+    -fx-background-radius: 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 0px 0px 4px 4px;
+}

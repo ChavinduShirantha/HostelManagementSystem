@@ -1,16 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="1000.0" prefWidth="1800.0" styleClass="createNewAccount" stylesheets="@assest/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.SignUpFormController">
+<AnchorPane fx:id="pane" prefHeight="1000.0" prefWidth="1800.0" styleClass="createNewAccount" stylesheets="@assest/styles/styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.SignUpFormController">
    <children>
-      <Label layoutX="656.0" layoutY="39.0" text="Create New Account">
+      <Label layoutX="700.0" layoutY="51.0" text="Create New Account" textFill="#50a9ec">
          <font>
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
+      <Line endX="235.0" layoutX="421.0" layoutY="82.0" startX="-380.0" stroke="#50a9ec" strokeWidth="4.0" />
+      <Line endX="545.0" layoutX="1205.0" layoutY="85.0" startX="-39.0" stroke="#50a9ec" strokeWidth="4.0" />
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="120.0" layoutY="180.0" prefHeight="52.0" prefWidth="600.0" promptText="Name">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtSurName" labelFloat="true" layoutX="1050.0" layoutY="180.0" prefHeight="52.0" prefWidth="600.0" promptText="Surname">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCity" labelFloat="true" layoutX="120.0" layoutY="308.0" prefHeight="52.0" prefWidth="600.0" promptText="City">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="1050.0" layoutY="308.0" prefHeight="52.0" prefWidth="600.0" promptText="Contact">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="120.0" layoutY="561.0" prefHeight="52.0" prefWidth="600.0" promptText="User Name">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="1050.0" layoutY="561.0" prefHeight="52.0" prefWidth="600.0" promptText="Password">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="120.0" layoutY="448.0" prefHeight="52.0" prefWidth="1530.0" promptText="Email">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnSignUp" layoutX="645.0" layoutY="769.0" onAction="#btnSignUpOnAction" prefWidth="500.0" text="Sign Up" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="48.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXPasswordField fx:id="pwdPassword" labelFloat="true" layoutX="1050.0" layoutY="561.0" prefHeight="52.0" prefWidth="600.0" promptText="Password">
+         <font>
+            <Font name="Cambria Bold" size="36.0" />
+         </font>
+      </JFXPasswordField>
+      <ImageView fx:id="hidePwd" fitHeight="150.0" fitWidth="50.0" layoutX="1586.0" layoutY="583.0" onMouseClicked="#hidePwdOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assest/images/hidePassword.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fx:id="showpwd" fitHeight="150.0" fitWidth="50.0" layoutX="1586.0" layoutY="583.0" onMouseClicked="#showpwdOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assest/images/showpassword.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
    </children>
 </AnchorPane>

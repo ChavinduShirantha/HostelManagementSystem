@@ -136,6 +136,6 @@ public class DashboardFormController {
     }
 
     public void manageRoomOnAction(MouseEvent mouseEvent) throws IOException {
-        Navigation.navigate(Routes.Room,pane1);
+        Navigation.navigate(Routes.Room, pane1);
     }
 }

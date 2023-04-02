@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -49,15 +50,21 @@
       </JFXTextField>
       <DatePicker fx:id="dpDate" layoutX="702.0" layoutY="249.0" prefHeight="52.0" prefWidth="276.0" promptText="DOB" />
       <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="1271.0" layoutY="249.0" onAction="#cmbGender" prefHeight="52.0" prefWidth="276.0" promptText="Gender" />
-      <JFXButton fx:id="btnAdd" layoutX="1205.0" layoutY="370.0" onAction="#btnAddOnAction" text="Add Student">
+      <JFXButton fx:id="btnAdd" layoutX="1131.0" layoutY="370.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add Student" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="30.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="1443.0" layoutY="370.0" onAction="#btnClearOnAction" text="Clear">
+      <JFXButton fx:id="btnClear" layoutX="1443.0" layoutY="370.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="30.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </JFXButton>
    </children>
 </AnchorPane>
