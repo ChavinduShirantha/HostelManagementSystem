@@ -38,6 +38,10 @@ public class Navigation {
                 window.setTitle("Create New Account Form");
                 initUI("SignUpForm.fxml");
                 break;
+            case RESERVATION:
+                window.setTitle("Reservation Form");
+                initUI("ReservationForm.fxml");
+                break;
         }
     }
 

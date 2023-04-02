@@ -43,9 +43,12 @@ public class DashboardFormController {
     public ImageView imgStudent;
     public ImageView imgRoom;
     public Label lblCount;
+    public ImageView imgReservation;
+    public Pane panetxtManageReservation;
 
 
     private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
+
     public void initialize() {
         loadDate();
         loadTime();
@@ -102,9 +105,9 @@ public class DashboardFormController {
                 case "imgRoom":
                     panetxtManageRoom.setVisible(true);
                     break;
-                /*case "imgViewOrders":
-
-                    break;*/
+                case "imgReservation":
+                    panetxtManageReservation.setVisible(true);
+                    break;
             }
 
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
@@ -134,6 +137,7 @@ public class DashboardFormController {
             panetxtDashboard.setVisible(false);
             panetxtManageStudent.setVisible(false);
             panetxtManageRoom.setVisible(false);
+            panetxtManageReservation.setVisible(false);
         }
 
     }
@@ -146,4 +150,7 @@ public class DashboardFormController {
         Navigation.navigate(Routes.Room, pane1);
     }
 
+    public void manageReservationOnAction(MouseEvent mouseEvent) throws IOException {
+        Navigation.navigate(Routes.RESERVATION,pane1);
+    }
 }

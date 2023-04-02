@@ -31,6 +31,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </ImageView>
+                  <ImageView fx:id="imgReservation" fitHeight="64.0" fitWidth="64.0" layoutX="19.0" layoutY="445.0" onMouseClicked="#manageReservationOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@assest/images/reservation.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
                </children></Pane>
             <Pane fx:id="panetxtDashboard" layoutX="105.0" layoutY="83.0" prefHeight="53.0" prefWidth="195.0" visible="false">
                <children>
@@ -81,6 +89,15 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
+            <Pane fx:id="panetxtManageReservation" layoutX="119.0" layoutY="447.0" prefHeight="53.0" prefWidth="255.0" visible="false">
+               <children>
+                  <Label layoutY="2.0" text="Manage Reservation">
+                     <font>
+                        <Font name="Cambria Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane prefHeight="50.0" prefWidth="1800.0" styleClass="mainbar" stylesheets="@assest/styles/styles.css">
