@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.RoomFormController">
    <children>
@@ -12,5 +18,68 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="150.0" layoutY="150.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type" />
+      <TableView fx:id="tblRoomDetails" layoutX="294.0" layoutY="491.0" prefHeight="395.0" prefWidth="1137.0">
+         <columns>
+            <TableColumn prefWidth="275.2001037597656" text="Room ID" />
+            <TableColumn minWidth="6.4000244140625" prefWidth="284.7999267578125" text="Room Type" />
+            <TableColumn prefWidth="308.0" text="Key Money" />
+            <TableColumn prefWidth="271.199951171875" text="Qty" />
+         </columns>
+      </TableView>
+      <JFXComboBox fx:id="cmbRoomID" labelFloat="true" layoutX="150.0" layoutY="270.0" prefHeight="52.0" prefWidth="276.0" promptText="Room ID" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="600.0" layoutY="270.0" prefHeight="52.0" prefWidth="276.0" promptText="Qty">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="1141.0" layoutY="380.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add Room" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="1453.0" layoutY="380.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="600.0" layoutY="150.0" prefHeight="52.0" prefWidth="276.0" promptText="Key Money">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <Pane layoutX="957.0" layoutY="142.0" prefHeight="198.0" prefWidth="654.0" style="-fx-border-radius: 20; -fx-border-color: black;">
+         <children>
+            <Label layoutX="274.0" layoutY="10.0" text="Add New Room">
+               <font>
+                  <Font name="Cambria Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtRoomType" labelFloat="true" layoutX="47.0" layoutY="62.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtRoomID" labelFloat="true" layoutX="357.0" layoutY="62.0" prefHeight="52.0" prefWidth="276.0" promptText="Room ID">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="btnAddNew" layoutX="537.0" layoutY="128.0" onAction="#btnAddNewOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

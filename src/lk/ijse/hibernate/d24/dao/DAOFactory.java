@@ -1,5 +1,6 @@
 package lk.ijse.hibernate.d24.dao;
 
+import lk.ijse.hibernate.d24.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hibernate.d24.dao.custom.impl.StudentDAOImpl;
 import lk.ijse.hibernate.d24.dao.custom.impl.UserDAOImpl;
 
@@ -18,7 +19,7 @@ public class DAOFactory {
     }
 
     public enum DAOTypes {
-        STUDENT, USER
+        STUDENT, USER, ROOM
     }
 
     public SuperDAO getDAO(DAOTypes types) {
@@ -27,6 +28,8 @@ public class DAOFactory {
                 return new StudentDAOImpl();
             case USER:
                 return new UserDAOImpl();
+            case ROOM:
+                return new RoomDAOImpl();
             default:
                 return null;
         }

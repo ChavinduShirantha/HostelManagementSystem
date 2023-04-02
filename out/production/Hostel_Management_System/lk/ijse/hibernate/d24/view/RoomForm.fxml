@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.RoomFormController">
    <children>
@@ -12,5 +12,6 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
+      <JFXComboBox labelFloat="true" layoutX="258.0" layoutY="188.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type" />
    </children>
 </AnchorPane>
