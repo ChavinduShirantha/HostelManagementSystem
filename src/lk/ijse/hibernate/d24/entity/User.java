@@ -41,6 +41,11 @@ public class User implements SuperEntity{
     public User() {
     }
 
+    public User(String user_name, String pwd) {
+        this.user_name = user_name;
+        this.pwd = pwd;
+    }
+
     public String getUser_name() {
         return user_name;
     }

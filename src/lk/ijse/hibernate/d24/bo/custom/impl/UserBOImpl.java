@@ -4,6 +4,7 @@ import lk.ijse.hibernate.d24.bo.custom.UserBO;
 import lk.ijse.hibernate.d24.dao.DAOFactory;
 import lk.ijse.hibernate.d24.dao.custom.UserDAO;
 import lk.ijse.hibernate.d24.dto.UserDTO;
+import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.entity.User;
 
 import java.io.IOException;
@@ -41,5 +42,10 @@ public class UserBOImpl implements UserBO {
         }
 
         return userLogin;
+    }
+
+    @Override
+    public boolean updateUser(User dto) {
+        return userDAO.update(new User(dto.getUser_name(), dto.getPwd()));
     }
 }

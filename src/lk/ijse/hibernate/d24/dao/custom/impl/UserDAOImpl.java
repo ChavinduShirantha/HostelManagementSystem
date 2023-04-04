@@ -31,7 +31,14 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean update(User entity) {
-        return false;
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction t1 = session.beginTransaction();
+
+        session.update(entity);
+
+        t1.commit();
+        session.close();
+        return true;
     }
 
     @Override
