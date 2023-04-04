@@ -84,5 +84,40 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
+      <Label fx:id="lblErrorName" layoutX="125.0" layoutY="259.0" prefHeight="30.0" prefWidth="411.0" text="Name Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorEmail" layoutX="125.0" layoutY="523.0" prefHeight="30.0" prefWidth="411.0" text="Email Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorContact" layoutX="1064.0" layoutY="383.0" prefHeight="30.0" prefWidth="411.0" text="Contact Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorSurName" layoutX="1062.0" layoutY="255.0" prefHeight="30.0" prefWidth="411.0" text="Surname Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorCity" layoutX="125.0" layoutY="385.0" prefHeight="30.0" prefWidth="411.0" text="City Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorPassword" layoutX="1067.0" layoutY="637.0" prefHeight="30.0" prefWidth="411.0" text="Password Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrorUserName" layoutX="127.0" layoutY="638.0" prefHeight="30.0" prefWidth="411.0" text="User Name Pattern is Invalid" textFill="RED">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

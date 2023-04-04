@@ -71,6 +71,11 @@
                   <Font size="24.0" />
                </font>
             </JFXPasswordField>
+            <Label fx:id="lblError" layoutX="237.0" layoutY="322.0" prefHeight="30.0" prefWidth="411.0" text="User name or password incorrect" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <ImageView fitHeight="603.0" fitWidth="874.0" layoutX="65.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true">

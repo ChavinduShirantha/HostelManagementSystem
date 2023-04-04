@@ -204,6 +204,9 @@ public class DashboardFormController {
         } else {
             new Alert(Alert.AlertType.ERROR, "User Updated Failed !").show();
         }
+        txtgetUserName.clear();
+        getPassword.clear();
+        setPassword.clear();
     }
 
     public void show1OnAction(MouseEvent mouseEvent) {

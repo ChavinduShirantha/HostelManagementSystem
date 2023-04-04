@@ -4,15 +4,18 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
+import lk.ijse.hibernate.d24.dto.UserDTO;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -28,23 +31,25 @@ public class LoginFormController {
     public ImageView showpwd;
     public JFXPasswordField pwdPassword;
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
+    public Label lblError;
 
     public void initialize() {
         pwdPassword.setVisible(true);
         hidePwd.setVisible(false);
         showpwd.setVisible(true);
         txtPwd.setVisible(false);
+        lblError.setVisible(false);
     }
 
     public void LoginOnAction(ActionEvent actionEvent) throws IOException {
-        /*ArrayList<UserDTO> allUser = userBO.getAllUser();
+       /* ArrayList<UserDTO> allUser = userBO.getAllUser();
 
         for (UserDTO userDTO : allUser) {
 
             if(userDTO.getUser_name().equals(txtUserName.getText()) && userDTO.getPwd().equals(pwdPassword.getText())){*/
         Navigation.navigate(Routes.Dashboard, pane);
             /*}else{
-                new Alert(Alert.AlertType.ERROR,"Login Failed..").show();
+                lblError.setVisible(true);
             }
         }*/
 
