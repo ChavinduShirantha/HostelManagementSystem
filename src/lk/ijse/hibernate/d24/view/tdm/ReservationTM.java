@@ -16,6 +16,14 @@ public class ReservationTM {
     public ReservationTM() {
     }
 
+    public ReservationTM(String res_id, LocalDate date, String student_id, String room_type_id, String status) {
+        this.res_id = res_id;
+        this.date = date;
+        this.student_id = student_id;
+        this.room_type_id = room_type_id;
+        this.status = status;
+    }
+
     public String getRes_id() {
         return res_id;
     }
