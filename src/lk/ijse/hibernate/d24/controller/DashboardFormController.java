@@ -73,6 +73,7 @@ public class DashboardFormController {
     public JFXTextField txtGetPassword;
     public Button btnSearch;
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
+    public Label lblTotStudent;
 
 
     public void initialize() {

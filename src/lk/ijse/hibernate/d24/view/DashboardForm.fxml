@@ -52,22 +52,136 @@
                   </Label>
                </children>
             </Pane>
-            <Pane fx:id="panetxtManageStudent" layoutX="111.0" layoutY="200.0" prefHeight="53.0" prefWidth="296.0" visible="false">
+            <Pane fx:id="panetxtManageRoom" layoutX="115.0" layoutY="328.0" prefHeight="53.0" prefWidth="255.0" visible="false">
                <children>
-                  <Label layoutY="2.0" text="Manage Students">
+                  <Label layoutY="2.0" text="Manage Rooms">
                      <font>
                         <Font name="Cambria Bold" size="36.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <AnchorPane fx:id="pane1" layoutX="99.0" layoutY="2.0" prefHeight="950.0" prefWidth="1700.0">
+            <AnchorPane fx:id="pane1" layoutX="99.0" layoutY="2.0" prefHeight="950.0" prefWidth="1700.0" stylesheets="@assest/styles/styles.css">
                <children>
                   <Label layoutX="706.0" layoutY="30.0" text="Dashboard">
                      <font>
                         <Font name="Cambria Bold" size="48.0" />
                      </font>
                   </Label>
+                  <Pane layoutX="130.0" layoutY="125.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label fx:id="lblTotStudent" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="10" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="53.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/peopleicon.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="51.0" layoutY="157.0" text="Total Enrolled Students" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="660.0" layoutY="125.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label layoutX="20.0" layoutY="154.0" text="Total Enrolled Male Students" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotStudent12" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="64.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/manicon10.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1200.0" layoutY="125.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label layoutX="7.0" layoutY="155.0" text="Total Enrolled Female Students" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotStudent13" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="69.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/womenicon10.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="130.0" layoutY="500.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label layoutX="106.0" layoutY="157.0" text="Total Rooms" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotStudent1" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="20" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="50.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/allroom.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="660.0" layoutY="500.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label layoutX="35.0" layoutY="156.0" text="Total Not available Rooms" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotStudent11" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="77.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/notavailableroom.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="1200.0" layoutY="500.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
+                     <children>
+                        <Label layoutX="64.0" layoutY="156.0" text="Total available Rooms" textFill="#818181">
+                           <font>
+                              <Font name="Cambria Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblTotStudent14" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="15" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="46.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assest/images/availableroom.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
                   <Pane fx:id="pane5" layoutX="1365.0" layoutY="5.0" prefHeight="330.0" prefWidth="291.0" style="-fx-background-radius: 30; -fx-background-color: lightgray;" visible="false">
                      <children>
                         <JFXTextField fx:id="txtgetUserName" labelFloat="true" layoutX="41.0" layoutY="23.0" promptText="User Name">
@@ -140,15 +254,6 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <Pane fx:id="panetxtManageRoom" layoutX="115.0" layoutY="328.0" prefHeight="53.0" prefWidth="255.0" visible="false">
-               <children>
-                  <Label layoutY="2.0" text="Manage Rooms">
-                     <font>
-                        <Font name="Cambria Bold" size="36.0" />
-                     </font>
-                  </Label>
-               </children>
-            </Pane>
             <ImageView fx:id="imgDashBoard" fitHeight="60.0" fitWidth="60.0" layoutX="19.0" layoutY="80.0" onMouseClicked="#dashboardOnAction" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
                   <Image url="@assest/images/menu.png" />
@@ -160,6 +265,15 @@
             <Pane fx:id="panetxtManageReservation" layoutX="119.0" layoutY="447.0" prefHeight="53.0" prefWidth="255.0" visible="false">
                <children>
                   <Label layoutY="2.0" text="Manage Reservation">
+                     <font>
+                        <Font name="Cambria Bold" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="panetxtManageStudent" layoutX="111.0" layoutY="200.0" prefHeight="53.0" prefWidth="296.0" styleClass="show" stylesheets="@assest/styles/styles.css" visible="false">
+               <children>
+                  <Label layoutY="2.0" text="Manage Students">
                      <font>
                         <Font name="Cambria Bold" size="36.0" />
                      </font>

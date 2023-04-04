@@ -57,3 +57,11 @@
     -fx-border-color: transparent;
     -fx-border-width: 0px 0px 4px 4px;
 }
+
+.rec{
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-background-color: #a0e7e5;
+    -fx-border-width: 0px 4px 4px 0px;
+    -fx-border-color: black;
+}
