@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.ReservationFormController">
    <children>
@@ -12,5 +18,43 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
+      <TableView fx:id="tblReservation" layoutX="216.0" layoutY="524.0" prefHeight="316.0" prefWidth="1286.0">
+        <columns>
+          <TableColumn prefWidth="192.0" text="Res_id" />
+          <TableColumn prefWidth="273.6000061035156" text="Date" />
+            <TableColumn prefWidth="295.2000732421875" text="Student_id" />
+            <TableColumn prefWidth="297.60009765625" text="Room_Type" />
+            <TableColumn prefWidth="228.0001220703125" text="Status" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="txtResId" labelFloat="true" layoutX="163.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Reserve Id">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="702.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" />
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="1200.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_Type" />
+      <DatePicker fx:id="date" layoutX="292.0" layoutY="286.0" prefHeight="46.0" prefWidth="290.0" promptText="Date" />
+      <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="993.0" layoutY="281.0" prefHeight="46.0" prefWidth="290.0" promptText="Status">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="1180.0" layoutY="388.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add " textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="1383.0" layoutY="386.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>
