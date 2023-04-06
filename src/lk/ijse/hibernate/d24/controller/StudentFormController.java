@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableView;
@@ -23,16 +24,25 @@ import java.util.ArrayList;
  * created : 3/28/2023-10:45 AM
  **/
 public class StudentFormController {
-    public TableView<StudentTM> tblStdDetails;
-    public JFXTextField txtStdId;
-    public JFXTextField txtName;
-    public JFXTextField txtAddress;
-    public JFXTextField txtContact;
-    public JFXComboBox cmbGender;
-    public JFXButton btnAdd;
-    public JFXButton btnClear;
-    public DatePicker dpDate;
-    public JFXButton btnAddId;
+    @FXML
+    private TableView<StudentTM> tblStdDetails;
+    @FXML
+    private JFXTextField txtStdId;
+    @FXML
+    private JFXTextField txtName;
+    @FXML
+    private JFXTextField txtAddress;
+    @FXML
+    private JFXTextField txtContact;
+    @FXML
+    private JFXComboBox cmbGender;
+    @FXML
+    private JFXButton btnAdd;
+    @FXML
+    private JFXButton btnClear;
+    @FXML
+    private DatePicker dpDate;
+    private JFXButton btnAddId;
 
 
     private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
