@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -11,12 +12,10 @@ import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.entity.Room;
-import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.view.tdm.RoomTM;
 
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -24,16 +23,26 @@ import java.util.ArrayList;
  * created : 3/28/2023-10:46 AM
  **/
 public class RoomFormController {
-    public JFXComboBox cmbRoomType;
-    public TableView<RoomTM> tblRoomDetails;
-    public JFXComboBox cmbRoomID;
-    public JFXTextField txtQty;
-    public JFXButton btnAdd;
-    public JFXButton btnClear;
-    public JFXTextField txtKeyMoney;
-    public JFXTextField txtRoomType;
-    public JFXTextField txtRoomID;
-    public JFXButton btnAddNew;
+    @FXML
+    private JFXComboBox cmbRoomType;
+    @FXML
+    private TableView<RoomTM> tblRoomDetails;
+    @FXML
+    private JFXComboBox cmbRoomID;
+    @FXML
+    private JFXTextField txtQty;
+    @FXML
+    private JFXButton btnAdd;
+    @FXML
+    private JFXButton btnClear;
+    @FXML
+    private JFXTextField txtKeyMoney;
+    @FXML
+    private JFXTextField txtRoomType;
+    @FXML
+    private JFXTextField txtRoomID;
+    @FXML
+    private JFXButton btnAddNew;
 
 
 
