@@ -32,9 +32,9 @@
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="702.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" />
-      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="1200.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_Type" />
-      <DatePicker fx:id="dpdate" layoutX="292.0" layoutY="286.0" prefHeight="46.0" prefWidth="290.0" promptText="Date" />
+      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="702.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="1200.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_Type" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <DatePicker fx:id="dpdate" layoutX="292.0" layoutY="286.0" prefHeight="46.0" prefWidth="290.0" promptText="Date" styleClass="date" stylesheets="@assest/styles/styles.css" />
       <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="993.0" layoutY="281.0" prefHeight="46.0" prefWidth="290.0" promptText="Status">
          <font>
             <Font name="Cambria Bold" size="24.0" />

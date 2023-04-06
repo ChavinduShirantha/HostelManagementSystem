@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -18,7 +19,7 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
-      <TableView fx:id="tblReservation" layoutX="216.0" layoutY="524.0" prefHeight="316.0" prefWidth="1286.0">
+      <TableView fx:id="tblReservation" layoutX="216.0" layoutY="524.0" prefHeight="316.0" prefWidth="1286.0" stylesheets="@assest/styles/styles.css">
         <columns>
           <TableColumn prefWidth="192.0" text="Res_id" />
           <TableColumn prefWidth="273.6000061035156" text="Date" />
@@ -26,15 +27,22 @@
             <TableColumn prefWidth="297.60009765625" text="Room_Type" />
             <TableColumn prefWidth="228.0001220703125" text="Status" />
         </columns>
+         <styleClass>
+            <String fx:value="column-header" />
+            <String fx:value="column-header-background" />
+            <String fx:value="table-cell" />
+            <String fx:value="table-row-cell" />
+            <String fx:value="table-view" />
+         </styleClass>
       </TableView>
       <JFXTextField fx:id="txtResId" labelFloat="true" layoutX="163.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Reserve Id">
          <font>
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </JFXTextField>
-      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="702.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" />
-      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="1200.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_Type" />
-      <DatePicker fx:id="dpdate" layoutX="292.0" layoutY="286.0" prefHeight="46.0" prefWidth="290.0" promptText="Date" />
+      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="702.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="1200.0" layoutY="138.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_Type" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <DatePicker fx:id="dpdate" layoutX="292.0" layoutY="286.0" prefHeight="46.0" prefWidth="290.0" promptText="Date" styleClass="date" stylesheets="@assest/styles/styles.css" />
       <JFXTextField fx:id="txtStatus" labelFloat="true" layoutX="993.0" layoutY="281.0" prefHeight="46.0" prefWidth="290.0" promptText="Status">
          <font>
             <Font name="Cambria Bold" size="24.0" />

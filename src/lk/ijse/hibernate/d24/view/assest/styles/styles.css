@@ -65,3 +65,13 @@
     -fx-border-width: 0px 4px 4px 0px;
     -fx-border-color: black;
 }
+
+.cmb{
+    -fx-font-size: 24px;
+    -fx-font-family: Cambria;
+}
+
+.date{
+    -fx-font-size: 24px;
+    -fx-font-family: Cambria;
+}

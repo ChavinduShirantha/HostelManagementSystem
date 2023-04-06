@@ -65,3 +65,42 @@
     -fx-border-width: 0px 4px 4px 0px;
     -fx-border-color: black;
 }
+
+.cmb{
+    -fx-font-size: 24px;
+    -fx-font-family: Cambria;
+}
+
+.date{
+    -fx-font-size: 24px;
+    -fx-font-family: Cambria;
+}
+
+.table-view {
+    -fx-background-color: #F5F5F5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-alignment: CENTER;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-row-cell {
+    -fx-padding: 5px;
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-cell:filled:selected,
+.table-view .table-cell:filled:hover {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}

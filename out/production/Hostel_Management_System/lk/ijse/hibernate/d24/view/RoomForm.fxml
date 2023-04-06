@@ -18,7 +18,7 @@
             <Font name="Cambria Bold" size="48.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="150.0" layoutY="150.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type" />
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="150.0" layoutY="150.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
       <TableView fx:id="tblRoomDetails" layoutX="294.0" layoutY="491.0" prefHeight="395.0" prefWidth="1137.0">
          <columns>
             <TableColumn prefWidth="275.2001037597656" text="Room ID" />
@@ -27,7 +27,7 @@
             <TableColumn prefWidth="271.199951171875" text="Qty" />
          </columns>
       </TableView>
-      <JFXComboBox fx:id="cmbRoomID" labelFloat="true" layoutX="150.0" layoutY="270.0" prefHeight="52.0" prefWidth="276.0" promptText="Room ID" />
+      <JFXComboBox fx:id="cmbRoomID" labelFloat="true" layoutX="150.0" layoutY="270.0" prefHeight="52.0" prefWidth="276.0" promptText="Room ID" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
       <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="600.0" layoutY="270.0" prefHeight="52.0" prefWidth="276.0" promptText="Qty">
          <font>
             <Font name="Cambria Bold" size="24.0" />
