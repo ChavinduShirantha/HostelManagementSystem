@@ -37,6 +37,10 @@ import java.util.Date;
  **/
 public class DashboardFormController {
     @FXML
+    private ImageView imgRegister;
+    @FXML
+    private Pane panetxtManageRegister;
+    @FXML
     private Label lblTime;
     @FXML
     private Label lblDate;
@@ -168,6 +172,9 @@ public class DashboardFormController {
                 case "imgReservation":
                     panetxtManageReservation.setVisible(true);
                     break;
+                case "imgRegister":
+                    panetxtManageRegister.setVisible(true);
+                    break;
             }
 
             ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
@@ -198,6 +205,7 @@ public class DashboardFormController {
             panetxtManageStudent.setVisible(false);
             panetxtManageRoom.setVisible(false);
             panetxtManageReservation.setVisible(false);
+            panetxtManageRegister.setVisible(false);
         }
 
     }
@@ -275,5 +283,9 @@ public class DashboardFormController {
                 getPassword.setText(userDTO.getPwd());
             }
         }
+    }
+
+    public void manageRegisterOnAction(MouseEvent mouseEvent) throws IOException {
+        Navigation.navigate(Routes.REGISTER, pane1);
     }
 }

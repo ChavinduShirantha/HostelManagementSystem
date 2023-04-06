@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.StudentRegisterFormController">
+   <children>
+      <Label layoutX="690.0" layoutY="44.0" text="Register Student">
+         <font>
+            <Font name="Cambria Bold" size="48.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbRoom_id" labelFloat="true" layoutX="1200.0" layoutY="170.0" prefHeight="46.0" prefWidth="290.0" promptText="Room_ID" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <JFXComboBox fx:id="cmbStd_id" labelFloat="true" layoutX="660.0" layoutY="170.0" prefHeight="46.0" prefWidth="290.0" promptText="Student_ID" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <JFXTextField fx:id="txtResId" labelFloat="true" layoutX="170.0" layoutY="158.0" prefHeight="46.0" prefWidth="290.0" promptText="Register Id">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="1200.0" layoutY="410.0" prefHeight="52.0" prefWidth="276.0" promptText="Qty">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="1200.0" layoutY="330.0" prefHeight="52.0" prefWidth="276.0" promptText="Key Money">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtRoomType" labelFloat="true" layoutX="1200.0" layoutY="250.0" prefHeight="52.0" prefWidth="276.0" promptText="Room Type">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="660.0" layoutY="250.0" prefHeight="52.0" prefWidth="276.0" promptText="Name">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="660.0" layoutY="330.0" prefHeight="52.0" prefWidth="276.0" promptText="Address">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtContact" labelFloat="true" layoutX="660.0" layoutY="410.0" prefHeight="52.0" prefWidth="276.0" promptText="Contact No">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <DatePicker fx:id="dpDate" layoutX="660.0" layoutY="490.0" prefHeight="52.0" prefWidth="276.0" promptText="DOB" styleClass="date" stylesheets="@assest/styles/styles.css" />
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="660.0" layoutY="570.0" onAction="#cmbGender" prefHeight="52.0" prefWidth="276.0" promptText="Gender" styleClass="cmb" stylesheets="@assest/styles/styles.css" />
+      <JFXTextField fx:id="txtQty1" labelFloat="true" layoutX="1200.0" layoutY="490.0" prefHeight="52.0" prefWidth="276.0" promptText="Status(Paid or not)">
+         <font>
+            <Font name="Cambria Bold" size="24.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="1143.0" layoutY="781.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add " textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="1346.0" layoutY="779.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

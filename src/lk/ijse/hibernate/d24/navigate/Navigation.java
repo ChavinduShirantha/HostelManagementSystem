@@ -42,6 +42,10 @@ public class Navigation {
                 window.setTitle("Reservation Form");
                 initUI("ReservationForm.fxml");
                 break;
+            case REGISTER:
+                window.setTitle("Register Form");
+                initUI("StudentRegisterForm.fxml");
+                break;
         }
     }
 
