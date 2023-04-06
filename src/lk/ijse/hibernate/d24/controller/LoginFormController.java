@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -22,16 +23,25 @@ import java.util.ArrayList;
  * created : 3/27/2023-5:41 PM
  **/
 public class LoginFormController {
-    public AnchorPane pane;
-    public JFXButton btnLogin;
-    public JFXButton btnSignUp;
-    public JFXTextField txtUserName;
-    public JFXTextField txtPwd;
-    public ImageView hidePwd;
-    public ImageView showpwd;
-    public JFXPasswordField pwdPassword;
+    @FXML
+    private AnchorPane pane;
+    @FXML
+    private JFXButton btnLogin;
+    @FXML
+    private JFXButton btnSignUp;
+    @FXML
+    private JFXTextField txtUserName;
+    @FXML
+    private JFXTextField txtPwd;
+    @FXML
+    private ImageView hidePwd;
+    @FXML
+    private ImageView showpwd;
+    @FXML
+    private JFXPasswordField pwdPassword;
+    @FXML
+    private Label lblError;
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
-    public Label lblError;
 
     public void initialize() {
         pwdPassword.setVisible(true);
