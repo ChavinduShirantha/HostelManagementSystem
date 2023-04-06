@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.animation.ScaleTransition;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,13 +21,11 @@ import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
 import lk.ijse.hibernate.d24.dto.UserDTO;
-import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.entity.User;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -37,43 +36,70 @@ import java.util.Date;
  * created : 3/28/2023-10:48 AM
  **/
 public class DashboardFormController {
-    public Label lblTime;
-    public Label lblDate;
-    public JFXButton btnLogout;
-    public AnchorPane pane;
-    public Pane menubar;
-    public Pane btnDashboard;
-    public Pane panetxtDashboard;
-    public Pane panetxtManageStudent;
-    public AnchorPane pane1;
-    public JFXButton btnManageRoom;
-    public Pane panetxtManageRoom;
-    public ImageView imgDashBoard;
-    public ImageView imgStudent;
-    public ImageView imgRoom;
-    public ImageView imgReservation;
-    public Pane panetxtManageReservation;
-
-
+    @FXML
+    private Label lblTime;
+    @FXML
+    private Label lblDate;
+    @FXML
+    private JFXButton btnLogout;
+    @FXML
+    private AnchorPane pane;
+    @FXML
+    private Pane menubar;
+    @FXML
+    private Pane btnDashboard;
+    @FXML
+    private Pane panetxtDashboard;
+    @FXML
+    private Pane panetxtManageStudent;
+    @FXML
+    private AnchorPane pane1;
+    @FXML
+    private Pane panetxtManageRoom;
+    @FXML
+    private ImageView imgDashBoard;
+    @FXML
+    private ImageView imgStudent;
+    @FXML
+    private ImageView imgRoom;
+    @FXML
+    private ImageView imgReservation;
+    @FXML
+    private Pane panetxtManageReservation;
+    @FXML
+    private Label lblUserName;
+    @FXML
+    private ImageView imgUser;
+    @FXML
+    private Pane pane5;
+    @FXML
+    private JFXTextField txtgetUserName;
+    @FXML
+    private Button btnChange;
+    @FXML
+    private JFXPasswordField setPassword;
+    @FXML
+    private JFXPasswordField getPassword;
+    @FXML
+    private ImageView show1;
+    @FXML
+    private ImageView show2;
+    @FXML
+    private ImageView hide1;
+    @FXML
+    private ImageView hide2;
+    @FXML
+    private JFXTextField txtSetPassword;
+    @FXML
+    private JFXTextField txtGetPassword;
+    @FXML
+    private Button btnSearch;
+    @FXML
+    private Label lblTotStudent;
     private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
-    public Label lblUserName;
-    public ImageView imgUser;
-    public Pane pane5;
-    public JFXTextField txtgetUserName;
-    public Button btnChange;
-    public JFXPasswordField setPassword;
-    public JFXPasswordField getPassword;
-    public ImageView show1;
-    public ImageView show2;
-    public ImageView hide1;
-    public ImageView hide2;
 
-
-    public JFXTextField txtSetPassword;
-    public JFXTextField txtGetPassword;
-    public Button btnSearch;
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
-    public Label lblTotStudent;
+
 
 
     public void initialize() {
