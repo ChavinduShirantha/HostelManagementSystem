@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
@@ -24,29 +25,46 @@ import java.util.regex.Pattern;
  * created : 3/28/2023-4:19 PM
  **/
 public class SignUpFormController {
-    public JFXTextField txtName;
-    public JFXTextField txtSurName;
-    public JFXTextField txtCity;
-    public JFXTextField txtContact;
-    public JFXTextField txtUserName;
-    public JFXTextField txtEmail;
-    public JFXButton btnSignUp;
-    public JFXTextField txtPassword;
-    public JFXPasswordField pwdPassword;
-    public AnchorPane pane;
-    public ImageView hidePwd;
-    public ImageView showpwd;
-
+    @FXML
+    private JFXTextField txtName;
+    @FXML
+    private JFXTextField txtSurName;
+    @FXML
+    private JFXTextField txtCity;
+    @FXML
+    private JFXTextField txtContact;
+    @FXML
+    private JFXTextField txtUserName;
+    @FXML
+    private JFXTextField txtEmail;
+    @FXML
+    private JFXButton btnSignUp;
+    @FXML
+    private JFXTextField txtPassword;
+    @FXML
+    private JFXPasswordField pwdPassword;
+    @FXML
+    private AnchorPane pane;
+    @FXML
+    private ImageView hidePwd;
+    @FXML
+    private ImageView showpwd;
+    @FXML
+    private Label lblErrorName;
+    @FXML
+    private Label lblErrorEmail;
+    @FXML
+    private Label lblErrorContact;
+    @FXML
+    private Label lblErrorSurName;
+    @FXML
+    private Label lblErrorCity;
+    @FXML
+    private Label lblErrorPassword;
+    @FXML
+    private Label lblErrorUserName;
 
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
-    public Label lblErrorName;
-    public Label lblErrorEmail;
-    public Label lblErrorContact;
-    public Label lblErrorSurName;
-    public Label lblErrorCity;
-    public Label lblErrorPassword;
-    public Label lblErrorUserName;
-
     public void initialize() {
         pwdPassword.setVisible(true);
         hidePwd.setVisible(false);
