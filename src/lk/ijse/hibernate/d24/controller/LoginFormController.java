@@ -60,12 +60,17 @@ public class LoginFormController {
             new Alert(Alert.AlertType.ERROR, "Please fill all blank fields").show();
 
         } else {
+
             for (UserDTO userDTO : allUser) {
 
                 if (userDTO.getUser_name().equals(txtUserName.getText()) && userDTO.getPwd().equals(pwdPassword.getText())) {
+
                     Navigation.navigate(Routes.Dashboard, pane);
+
                 } else {
+
                     lblError.setVisible(true);
+
                 }
             }
         }
