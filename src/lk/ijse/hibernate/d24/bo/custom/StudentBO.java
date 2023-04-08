@@ -1,11 +1,9 @@
 package lk.ijse.hibernate.d24.bo.custom;
 
 import lk.ijse.hibernate.d24.dto.StudentDTO;
-import lk.ijse.hibernate.d24.entity.Room;
 import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -21,7 +19,6 @@ public interface StudentBO extends SuperBO {
 
     boolean deleteStudent(String id);
 
-    int countStudent();
     public Student getStudent(String id) throws IOException;
 
 }

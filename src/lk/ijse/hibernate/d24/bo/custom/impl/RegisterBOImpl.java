@@ -4,9 +4,8 @@ import lk.ijse.hibernate.d24.bo.custom.RegisterBO;
 import lk.ijse.hibernate.d24.dao.DAOFactory;
 import lk.ijse.hibernate.d24.dao.custom.RegisterDAO;
 import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
-import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
-import lk.ijse.hibernate.d24.entity.Student;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,6 +17,7 @@ import java.util.List;
  **/
 public class RegisterBOImpl implements RegisterBO {
     private final RegisterDAO registerDAO = (RegisterDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.REGISTER);
+
     @Override
     public boolean saveRegister(RegisterStudent dto) {
         return registerDAO.save(new RegisterStudent(dto.getRes_id(), dto.getDate(), dto.getStudent(), dto.getRoom(), dto.getStatus()));

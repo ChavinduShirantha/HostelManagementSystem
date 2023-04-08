@@ -73,10 +73,11 @@ public class StudentRegisterFormController {
     private final RegisterBO registerBO = (RegisterBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REGISTER);
     private final StudentBO studentBO = (StudentBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
     private final RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
+
     public void initialize() throws IOException {
 
         lblAvailable.setText("Available Or Not");
-        cmbGender.getItems().addAll("Male","FeMale");
+        cmbGender.getItems().addAll("Male", "FeMale");
 
         for (StudentDTO dto : studentBO.getAllStudent()) {
             cmbStd_id.getItems().add(dto.getStd_id());
@@ -88,7 +89,7 @@ public class StudentRegisterFormController {
 
         cmbRoom_id.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 
-            if(newValue!=null){
+            if (newValue != null) {
                 Room room = null;
                 try {
                     room = roomBO.getRoom(String.valueOf(newValue));
@@ -104,18 +105,18 @@ public class StudentRegisterFormController {
                 try {
                     List<RegisterStudentDTO> reserveDTOS = registerBO.searchReservedRoomById((String) newValue);
 
-                    int count=0;
+                    int count = 0;
                     for (RegisterStudentDTO reserveDTO : reserveDTOS) {
                         count++;
                     }
 
-                    int remainQty=Integer.parseInt(txtQty.getText())-count;
+                    int remainQty = Integer.parseInt(txtQty.getText()) - count;
                     lblUsedRoom.setText(String.valueOf(count));
                     lblRemainRoom.setText(String.valueOf(remainQty));
 
-                    if(remainQty==0){
+                    if (remainQty == 0) {
                         lblAvailable.setText("Un-Available");
-                    }else{
+                    } else {
                         lblAvailable.setText("Available");
                     }
 
@@ -130,7 +131,7 @@ public class StudentRegisterFormController {
 
         cmbStd_id.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 
-            if(newValue!=null){
+            if (newValue != null) {
                 Student student = null;
                 try {
                     student = studentBO.getStudent(String.valueOf(newValue));
@@ -148,13 +149,14 @@ public class StudentRegisterFormController {
         });
 
     }
+
     public void cmbGender(ActionEvent actionEvent) {
     }
 
     public void btnAddOnAction(ActionEvent actionEvent) {
-        String regId=txtResId.getText();
-        LocalDate regDate=dpRegDate.getValue();
-        String std_id= String.valueOf(cmbStd_id.getValue());
+        String regId = txtResId.getText();
+        LocalDate regDate = dpRegDate.getValue();
+        String std_id = String.valueOf(cmbStd_id.getValue());
         String name = txtName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
@@ -168,7 +170,7 @@ public class StudentRegisterFormController {
 
         Student student = new Student(std_id, name, address, contact, date, gender);
         Room room = new Room(roomId, roomtype, keyMoneyText, qty);
-        RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+        RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room, status);
 
 
         boolean add = registerBO.saveRegister(registerStudent);
@@ -190,6 +192,7 @@ public class StudentRegisterFormController {
         }
         clearFields();
     }
+
     public void clearFields() {
         txtResId.clear();
         txtRoomType.clear();
@@ -205,10 +208,11 @@ public class StudentRegisterFormController {
         cmbStd_id.setValue(null);
         btnAdd.setDisable(false);
     }
+
     public void btnUpdateOnAction(ActionEvent actionEvent) {
-        String regId=txtResId.getText();
-        LocalDate regDate=dpRegDate.getValue();
-        String std_id= String.valueOf(cmbStd_id.getValue());
+        String regId = txtResId.getText();
+        LocalDate regDate = dpRegDate.getValue();
+        String std_id = String.valueOf(cmbStd_id.getValue());
         String name = txtName.getText();
         String address = txtAddress.getText();
         String contact = txtContact.getText();
@@ -222,7 +226,7 @@ public class StudentRegisterFormController {
 
         Student student = new Student(std_id, name, address, contact, date, gender);
         Room room = new Room(roomId, roomtype, keyMoneyText, qty);
-        RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+        RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room, status);
 
         boolean update = registerBO.updateRegister(registerStudent);
         if (update) {
@@ -233,7 +237,7 @@ public class StudentRegisterFormController {
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) throws IOException {
-        String reg_id=txtResId.getText();
+        String reg_id = txtResId.getText();
 
         RegisterStudent register = registerBO.getRegister(reg_id);
         cmbStd_id.setValue(register.getStudent().getStd_id());

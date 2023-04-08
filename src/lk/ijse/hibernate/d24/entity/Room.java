@@ -1,9 +1,7 @@
 package lk.ijse.hibernate.d24.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -11,7 +9,7 @@ import javax.persistence.Table;
  **/
 @Entity
 @Table(name = "room")
-public class Room implements SuperEntity{
+public class Room implements SuperEntity {
     @Id
     @Column(name = "room_type_id")
     private String r_id;
@@ -22,7 +20,18 @@ public class Room implements SuperEntity{
     @Column(name = "qty")
     private int qty;
 
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+    private List<RegisterStudent> roomDetail;
+
     public Room() {
+    }
+
+    public Room(String r_id, String r_type, String key_money, int qty, List<RegisterStudent> roomDetail) {
+        this.r_id = r_id;
+        this.r_type = r_type;
+        this.key_money = key_money;
+        this.qty = qty;
+        this.roomDetail = roomDetail;
     }
 
     public Room(String r_id, String r_type, String key_money, int qty) {

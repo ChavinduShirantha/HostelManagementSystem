@@ -69,10 +69,11 @@ public class ReservationFormController {
         clearFields();
         loadCmbData();
     }
+
     public void btnAddOnAction(ActionEvent actionEvent) throws IOException {
-        String regId=txtResId.getText();
-        LocalDate regDate=dpdate.getValue();
-        String std_id= String.valueOf((cmbStd_id.getValue()));
+        String regId = txtResId.getText();
+        LocalDate regDate = dpdate.getValue();
+        String std_id = String.valueOf((cmbStd_id.getValue()));
         String roomId = String.valueOf((cmbRoomType.getValue()));
         String status = txtStatus.getText();
 
@@ -80,9 +81,9 @@ public class ReservationFormController {
         if (btnAdd.getText().equalsIgnoreCase("Add")) {
             Student student = new Student(std_id);
             Room room = new Room(roomId);
-            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room, status);
 
-            boolean add= registerBO.saveRegister(registerStudent);
+            boolean add = registerBO.saveRegister(registerStudent);
 
             if (add) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Added Successfully !").show();
@@ -94,7 +95,7 @@ public class ReservationFormController {
         } else if (btnAdd.getText().equalsIgnoreCase("Student")) {
             Student student = new Student(std_id);
             Room room = new Room(roomId);
-            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room, status);
 
             boolean update = registerBO.updateRegister(registerStudent);
             if (update) {
@@ -123,7 +124,7 @@ public class ReservationFormController {
         clearFields();
     }
 
-    private void loadCmbData(){
+    private void loadCmbData() {
         for (RoomDTO roomDTO : roomBO.getAllRoom()) {
             cmbRoomType.getItems().add(roomDTO.getR_type());
         }

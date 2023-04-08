@@ -11,12 +11,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
-import lk.ijse.hibernate.d24.dto.UserDTO;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * @author : Chavindu

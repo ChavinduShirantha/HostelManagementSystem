@@ -11,7 +11,7 @@ import javax.persistence.Table;
  **/
 @Entity
 @Table(name = "user")
-public class User implements SuperEntity{
+public class User implements SuperEntity {
     @Id
     @Column(name = "user_name")
     String user_name;

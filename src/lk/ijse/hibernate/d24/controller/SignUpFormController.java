@@ -65,6 +65,7 @@ public class SignUpFormController {
     private Label lblErrorUserName;
 
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
+
     public void initialize() {
         pwdPassword.setVisible(true);
         hidePwd.setVisible(false);

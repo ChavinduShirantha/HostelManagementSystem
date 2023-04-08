@@ -51,7 +51,8 @@ public class RoomDAOImpl implements RoomDAO {
 
         t1.commit();
         session.close();
-        return true;    }
+        return true;
+    }
 
     @Override
     public ArrayList<Room> getAll() {

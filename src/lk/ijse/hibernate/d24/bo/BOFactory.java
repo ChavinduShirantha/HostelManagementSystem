@@ -18,7 +18,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENT,USER,ROOM,REGISTER
+        STUDENT, USER, ROOM, REGISTER
     }
 
     public SuperBO getBO(BOTypes types) {

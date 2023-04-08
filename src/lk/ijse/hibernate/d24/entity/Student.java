@@ -1,10 +1,8 @@
 package lk.ijse.hibernate.d24.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -27,7 +25,20 @@ public class Student implements SuperEntity {
     @Column(name = "gender")
     private String gender;
 
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<RegisterStudent> reservation;
+
     public Student() {
+    }
+
+    public Student(String std_id, String name, String address, String contact, LocalDate dob, String gender, List<RegisterStudent> reservation) {
+        this.std_id = std_id;
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+        this.dob = dob;
+        this.gender = gender;
+        this.reservation = reservation;
     }
 
     public Student(String std_id, String name, String address, String contact, LocalDate dob, String gender) {

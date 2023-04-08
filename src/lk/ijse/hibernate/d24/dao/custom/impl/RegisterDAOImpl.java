@@ -3,7 +3,6 @@ package lk.ijse.hibernate.d24.dao.custom.impl;
 import lk.ijse.hibernate.d24.dao.custom.RegisterDAO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.Room;
-import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;

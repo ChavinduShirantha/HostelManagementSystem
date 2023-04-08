@@ -18,5 +18,6 @@ public interface RoomBO extends SuperBO{
     boolean updateRoom(Room dto);
 
     boolean deleteRoom(String id);
+
     public Room getRoom(String id) throws IOException;
 }

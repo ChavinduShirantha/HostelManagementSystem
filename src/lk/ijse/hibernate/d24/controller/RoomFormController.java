@@ -45,7 +45,6 @@ public class RoomFormController {
     private JFXButton btnAddNew;
 
 
-
     private final RoomBOImpl roomBO = (RoomBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
 
     public void initialize() throws IOException {
@@ -71,6 +70,7 @@ public class RoomFormController {
             }
         });
     }
+
     public void btnAddOnAction(ActionEvent actionEvent) throws IOException {
         String r_id = String.valueOf(cmbRoomID.getValue());
         String r_type = String.valueOf(cmbRoomType.getValue());
@@ -79,7 +79,7 @@ public class RoomFormController {
 
         if (btnAdd.getText().equalsIgnoreCase("Add Room")) {
 
-            Room room = new Room(r_id,r_type,key_money,qty);
+            Room room = new Room(r_id, r_type, key_money, qty);
             boolean addRoom = roomBO.saveRoom(room);
 
             if (addRoom) {
@@ -91,7 +91,7 @@ public class RoomFormController {
             clearFields();
 
         } else if (btnAdd.getText().equalsIgnoreCase("Update Room")) {
-            Room room = new Room(r_id,r_type,key_money,qty);
+            Room room = new Room(r_id, r_type, key_money, qty);
             boolean updateRoom = roomBO.updateRoom(room);
             if (updateRoom) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Room Updated Successfully !").show();
@@ -119,14 +119,15 @@ public class RoomFormController {
     }
 
     public void btnAddNewOnAction(ActionEvent actionEvent) {
-        String roomId= txtRoomID.getText();
-        String roomType= txtRoomType.getText();
+        String roomId = txtRoomID.getText();
+        String roomType = txtRoomType.getText();
         cmbRoomID.getItems().addAll(roomId);
         cmbRoomType.getItems().addAll(roomType);
 
         txtRoomType.clear();
         txtRoomID.clear();
     }
+
     public void clearFields() {
         txtRoomID.clear();
         txtKeyMoney.clear();

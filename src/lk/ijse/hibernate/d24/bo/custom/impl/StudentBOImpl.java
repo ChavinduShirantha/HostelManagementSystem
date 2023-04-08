@@ -4,7 +4,6 @@ import lk.ijse.hibernate.d24.bo.custom.StudentBO;
 import lk.ijse.hibernate.d24.dao.DAOFactory;
 import lk.ijse.hibernate.d24.dao.custom.StudentDAO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
-import lk.ijse.hibernate.d24.entity.Room;
 import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
@@ -30,11 +29,6 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public boolean deleteStudent(String id) {
         return studentDAO.delete(id);
-    }
-
-    @Override
-    public int countStudent() {
-        return studentDAO.getStudentCount();
     }
 
     @Override

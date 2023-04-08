@@ -9,18 +9,18 @@ import java.time.LocalDate;
  **/
 @Entity
 @Table(name = "reservation")
-public class RegisterStudent implements SuperEntity{
+public class RegisterStudent implements SuperEntity {
     @Id
     @Column(name = "res_id")
     private String res_id;
     @Column(name = "date")
     private LocalDate date;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "student_id",referencedColumnName = "student_id")
+    @JoinColumn(name = "student_id", referencedColumnName = "student_id")
     private Student student;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "room_type_id",referencedColumnName = "room_type_id")
+    @JoinColumn(name = "room_type_id", referencedColumnName = "room_type_id")
     private Room room;
     @Column(name = "status")
     private String status;

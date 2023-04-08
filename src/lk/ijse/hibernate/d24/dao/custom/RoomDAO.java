@@ -9,6 +9,6 @@ import java.io.IOException;
  * @author : Chavindu
  * created : 4/2/2023-9:34 AM
  **/
-public interface RoomDAO extends CrudDAO<Room,String> {
+public interface RoomDAO extends CrudDAO<Room, String> {
     public Room getRoom(String id) throws IOException;
 }
