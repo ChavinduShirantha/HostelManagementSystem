@@ -22,9 +22,11 @@ import lk.ijse.hibernate.d24.bo.custom.RegisterBO;
 import lk.ijse.hibernate.d24.bo.custom.RoomBO;
 import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
+import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.dto.UserDTO;
+import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.User;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
@@ -138,17 +140,20 @@ public class DashboardFormController {
         List<RoomDTO> roomDTOS = roomBO.getAllRoom();
 
         int count = 0;
-        int count2 = 0;
         for (RoomDTO roomDTO : roomDTOS) {
             count += roomDTO.getQty();
-            count2++;
         }
         lblTotRoom.setText(String.valueOf(count));
-        int remainQty = Integer.parseInt(lblTotRoom.getText()) - count2;
-        lblTotUsedRoom.setText(String.valueOf(count2));
+
+        List<RegisterStudentDTO> reg = registerBO.getAllReg();
+
+        int countUsed = 0;
+        for (RegisterStudentDTO registerStudentDTO : reg) {
+            countUsed++;
+        }
+        int remainQty = Integer.parseInt(lblTotRoom.getText()) - countUsed;
+        lblTotUsedRoom.setText(String.valueOf(countUsed));
         lblTotAvailable.setText(String.valueOf(remainQty));
-
-
         List<StudentDTO> studentDTOS = studentBO.getAllStudent();
 
         int count1 = 0;

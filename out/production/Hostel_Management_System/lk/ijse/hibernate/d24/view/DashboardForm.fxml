@@ -78,7 +78,7 @@
                   </Label>
                   <Pane layoutX="130.0" layoutY="125.0" prefHeight="200.0" prefWidth="362.0" styleClass="rec" stylesheets="@assest/styles/styles.css">
                      <children>
-                        <Label fx:id="lblTotStudent" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="10" textFill="WHITE">
+                        <Label fx:id="lblTotStudent" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
@@ -102,7 +102,7 @@
                               <Font name="Cambria Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblMale" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                        <Label fx:id="lblMale" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
@@ -121,7 +121,7 @@
                               <Font name="Cambria Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblFemale" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                        <Label fx:id="lblFemale" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
@@ -140,7 +140,7 @@
                               <Font name="Cambria Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblTotRoom" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="20" textFill="WHITE">
+                        <Label fx:id="lblTotRoom" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
@@ -159,7 +159,7 @@
                               <Font name="Cambria Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblTotUsedRoom" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="5" textFill="WHITE">
+                        <Label fx:id="lblTotUsedRoom" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
@@ -178,7 +178,7 @@
                               <Font name="Cambria Bold" size="24.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblTotAvailable" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="15" textFill="WHITE">
+                        <Label fx:id="lblTotAvailable" layoutX="228.0" layoutY="43.0" prefHeight="54.0" prefWidth="58.0" text="0" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="36.0" />
                            </font>
