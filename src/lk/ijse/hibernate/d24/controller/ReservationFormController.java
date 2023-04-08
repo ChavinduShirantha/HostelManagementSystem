@@ -12,12 +12,15 @@ import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.RegisterBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
+import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.view.tdm.ReservationTM;
+import lk.ijse.hibernate.d24.view.tdm.StudentTM;
 
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -39,7 +42,7 @@ public class ReservationFormController {
     private final RoomBOImpl roomBO = (RoomBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
     private final RegisterBOImpl registerBO = (RegisterBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REGISTER);
 
-    public void initialize(){
+    public void initialize() throws IOException {
 
         tblReservation.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("res_id"));
         tblReservation.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("date"));
@@ -47,6 +50,7 @@ public class ReservationFormController {
         tblReservation.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("room_type_id"));
         tblReservation.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("status"));
 
+        getAllReservation();
 
         tblReservation.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             btnClear.setDisable(newValue == null);
@@ -83,14 +87,28 @@ public class ReservationFormController {
         }
     }
 
-
-
-
     public void clearFields() {
         txtResId.clear();
         cmbStd_id.setValue(null);
         cmbRoomType.setValue(null);
         txtStatus.clear();
         dpdate.setValue(null);
+    }
+
+    public void getAllReservation() throws IOException {
+        ArrayList<RegisterStudentDTO> allReg = registerBO.getAllReg();
+
+        tblReservation.getItems().clear();
+
+        for (RegisterStudentDTO registerStudentDTO : allReg) {
+            tblReservation.getItems().add(new ReservationTM(
+                    registerStudentDTO.getRes_id(),
+                    registerStudentDTO.getDate(),
+                    registerStudentDTO.getStudent().getStd_id(),
+                    registerStudentDTO.getRoom().getR_id(),
+                    registerStudentDTO.getStatus()
+            ));
+        }
+
     }
 }

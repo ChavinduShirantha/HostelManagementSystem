@@ -3,9 +3,13 @@ package lk.ijse.hibernate.d24.bo.custom.impl;
 import lk.ijse.hibernate.d24.bo.custom.RegisterBO;
 import lk.ijse.hibernate.d24.dao.DAOFactory;
 import lk.ijse.hibernate.d24.dao.custom.RegisterDAO;
+import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
+import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
+import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -31,5 +35,24 @@ public class RegisterBOImpl implements RegisterBO {
     @Override
     public RegisterStudent getRegister(String id) throws IOException {
         return registerDAO.getRegister(id);
+    }
+
+    @Override
+    public ArrayList<RegisterStudentDTO> getAllReg() {
+        ArrayList<RegisterStudent> all = registerDAO.getAll();
+
+        ArrayList<RegisterStudentDTO> allReg = new ArrayList<>();
+
+        for (RegisterStudent reg : all) {
+            allReg.add(new RegisterStudentDTO(
+                    reg.getRes_id(),
+                    reg.getDate(),
+                    reg.getStudent(),
+                    reg.getRoom(),
+                    reg.getStatus()
+            ));
+        }
+
+        return allReg;
     }
 }

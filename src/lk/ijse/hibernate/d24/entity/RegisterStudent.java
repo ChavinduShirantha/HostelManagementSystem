@@ -22,6 +22,7 @@ public class RegisterStudent implements SuperEntity{
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "room_type_id",referencedColumnName = "room_type_id")
     private Room room;
+    @Column(name = "status")
     private String status;
 
     public RegisterStudent() {

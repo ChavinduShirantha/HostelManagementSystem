@@ -1,9 +1,12 @@
 package lk.ijse.hibernate.d24.bo.custom;
 
+import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
+import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -14,5 +17,6 @@ public interface RegisterBO extends SuperBO{
     boolean deleteRegister(String id);
     boolean updateRegister(RegisterStudent dto);
     public RegisterStudent getRegister(String id) throws IOException;
+    ArrayList<RegisterStudentDTO> getAllReg();
 
 }
