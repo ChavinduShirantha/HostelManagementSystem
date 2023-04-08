@@ -8,8 +8,8 @@ import java.time.LocalDate;
  * created : 4/7/2023-3:30 PM
  **/
 @Entity
-@Table(name = "student_registration")
-public class RegisterStudent {
+@Table(name = "reservation")
+public class RegisterStudent implements SuperEntity{
     @Id
     @Column(name = "res_id")
     private String res_id;

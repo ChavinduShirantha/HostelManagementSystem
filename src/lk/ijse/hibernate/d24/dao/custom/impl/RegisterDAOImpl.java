@@ -1,22 +1,23 @@
 package lk.ijse.hibernate.d24.dao.custom.impl;
 
-import lk.ijse.hibernate.d24.dao.custom.ReservationDAO;
-import lk.ijse.hibernate.d24.entity.Reservation;
+import lk.ijse.hibernate.d24.dao.custom.RegisterDAO;
+import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
  * @author : Chavindu
- * created : 4/4/2023-4:06 PM
+ * created : 4/7/2023-6:12 PM
  **/
-public class ReservationDAOImpl implements ReservationDAO {
+public class RegisterDAOImpl implements RegisterDAO {
     @Override
-    public boolean save(Reservation entity) {
+    public boolean save(RegisterStudent entity) {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction t1 = session.beginTransaction();
 
@@ -29,7 +30,7 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public boolean update(Reservation entity) {
+    public boolean update(RegisterStudent entity) {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction t1 = session.beginTransaction();
 
@@ -45,8 +46,8 @@ public class ReservationDAOImpl implements ReservationDAO {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction t1 = session.beginTransaction();
 
-        Reservation reservation = session.get(Reservation.class, s);
-        session.delete(reservation);
+        RegisterStudent stu = session.get(RegisterStudent.class, s);
+        session.delete(stu);
 
         t1.commit();
         session.close();
@@ -54,15 +55,28 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public ArrayList<Reservation> getAll() {
+    public ArrayList<RegisterStudent> getAll() {
         Session session = SessionFactoryConfig.getInstance().getSession();
         Transaction t1 = session.beginTransaction();
 
-        Query q1 = session.createQuery("FROM Reservation ");
-        ArrayList<Reservation> list = (ArrayList<Reservation>) q1.list();
+        Query q1 = session.createQuery("FROM RegisterStudent ");
+        ArrayList<RegisterStudent> list = (ArrayList<RegisterStudent>) q1.list();
 
         t1.commit();
         session.close();
         return list;
+    }
+
+    @Override
+    public RegisterStudent getRegister(String id) throws IOException {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        RegisterStudent st = session.get(RegisterStudent.class, id);
+
+        transaction.commit();
+        session.close();
+
+        return st;
     }
 }

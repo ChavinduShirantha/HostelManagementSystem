@@ -1,26 +1,29 @@
 package lk.ijse.hibernate.d24.dto;
 
+import lk.ijse.hibernate.d24.entity.Room;
+import lk.ijse.hibernate.d24.entity.Student;
+
 import java.time.LocalDate;
 
 /**
  * @author : Chavindu
- * created : 4/2/2023-3:18 PM
+ * created : 4/7/2023-3:35 PM
  **/
-public class ReservationDTO {
+public class RegisterStudentDTO {
     private String res_id;
     private LocalDate date;
-    private String student_id;
-    private String room_type_id;
+    private Student student;
+    private Room room;
     private String status;
 
-    public ReservationDTO() {
+    public RegisterStudentDTO() {
     }
 
-    public ReservationDTO(String res_id, LocalDate date, String student_id, String room_type_id, String status) {
+    public RegisterStudentDTO(String res_id, LocalDate date, Student student, Room room, String status) {
         this.res_id = res_id;
         this.date = date;
-        this.student_id = student_id;
-        this.room_type_id = room_type_id;
+        this.student = student;
+        this.room = room;
         this.status = status;
     }
 
@@ -40,20 +43,20 @@ public class ReservationDTO {
         this.date = date;
     }
 
-    public String getStudent_id() {
-        return student_id;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudent_id(String student_id) {
-        this.student_id = student_id;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public String getRoom_type_id() {
-        return room_type_id;
+    public Room getRoom() {
+        return room;
     }
 
-    public void setRoom_type_id(String room_type_id) {
-        this.room_type_id = room_type_id;
+    public void setRoom(Room room) {
+        this.room = room;
     }
 
     public String getStatus() {
@@ -66,11 +69,11 @@ public class ReservationDTO {
 
     @Override
     public String toString() {
-        return "ReservationDTO{" +
+        return "RegisterStudent{" +
                 "res_id='" + res_id + '\'' +
                 ", date=" + date +
-                ", student_id='" + student_id + '\'' +
-                ", room_type_id='" + room_type_id + '\'' +
+                ", student=" + student +
+                ", room=" + room +
                 ", status='" + status + '\'' +
                 '}';
     }

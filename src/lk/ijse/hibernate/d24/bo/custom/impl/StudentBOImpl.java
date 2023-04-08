@@ -4,8 +4,10 @@ import lk.ijse.hibernate.d24.bo.custom.StudentBO;
 import lk.ijse.hibernate.d24.dao.DAOFactory;
 import lk.ijse.hibernate.d24.dao.custom.StudentDAO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
+import lk.ijse.hibernate.d24.entity.Room;
 import lk.ijse.hibernate.d24.entity.Student;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -33,6 +35,11 @@ public class StudentBOImpl implements StudentBO {
     @Override
     public int countStudent() {
         return studentDAO.getStudentCount();
+    }
+
+    @Override
+    public Student getStudent(String id) throws IOException {
+        return studentDAO.getStudent(id);
     }
 
     @Override

@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -63,5 +64,18 @@ public class RoomDAOImpl implements RoomDAO {
         t1.commit();
         session.close();
         return list;
+    }
+
+    @Override
+    public Room getRoom(String id) throws IOException {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Room st = session.get(Room.class, id);
+
+        transaction.commit();
+        session.close();
+
+        return st;
     }
 }

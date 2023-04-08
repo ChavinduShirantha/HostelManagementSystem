@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -77,5 +78,18 @@ public class StudentDAOImpl implements StudentDAO {
         t1.commit();
         session.close();
         return count;
+    }
+
+    @Override
+    public Student getStudent(String id) throws IOException {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Student st = session.get(Student.class, id);
+
+        transaction.commit();
+        session.close();
+
+        return st;
     }
 }

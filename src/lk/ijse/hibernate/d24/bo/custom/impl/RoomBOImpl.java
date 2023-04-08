@@ -7,6 +7,7 @@ import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.entity.Room;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -47,5 +48,10 @@ public class RoomBOImpl implements RoomBO {
     @Override
     public boolean deleteRoom(String id) {
         return roomDAO.delete(id);
+    }
+
+    @Override
+    public Room getRoom(String id) throws IOException {
+        return roomDAO.getRoom(id);
     }
 }

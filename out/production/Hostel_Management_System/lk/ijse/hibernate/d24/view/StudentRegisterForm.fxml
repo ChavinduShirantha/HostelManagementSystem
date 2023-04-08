@@ -7,8 +7,10 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
-
 
 <AnchorPane prefHeight="950.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hibernate.d24.controller.StudentRegisterFormController">
    <children>
@@ -61,7 +63,7 @@
             <Font name="Cambria Bold" size="24.0" />
          </font>
       </JFXTextField>
-      <JFXButton fx:id="btnAdd" layoutX="1143.0" layoutY="781.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add " textFill="WHITE">
+      <JFXButton fx:id="btnAdd" layoutX="800.0" layoutY="780.0" onAction="#btnAddOnAction" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Add " textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="30.0" />
          </font>
@@ -69,7 +71,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="btnClear" layoutX="1346.0" layoutY="779.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
+      <JFXButton fx:id="btnClear" layoutX="1400.0" layoutY="780.0" onAction="#btnClearOnAction" styleClass="button3" stylesheets="@assest/styles/styles.css" text="Delete" textFill="WHITE">
          <font>
             <Font name="Cambria Bold" size="30.0" />
          </font>
@@ -77,5 +79,58 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
+      <DatePicker fx:id="dpRegDate" layoutX="170.0" layoutY="250.0" prefHeight="52.0" prefWidth="276.0" promptText="Reg Date" styleClass="date" stylesheets="@assest/styles/styles.css" />
+      <JFXButton fx:id="btnUpdate" layoutX="1000.0" layoutY="780.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #44eca1;" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Update">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </JFXButton>
+      <JFXButton fx:id="btnSearch" layoutX="1200.0" layoutY="780.0" onAction="#btnSearchOnAction" style="-fx-background-color: #49adfa;" styleClass="button4" stylesheets="@assest/styles/styles.css" text="Search" textFill="WHITE">
+         <font>
+            <Font name="Cambria Bold" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label fx:id="lblAvailable" layoutX="266.0" layoutY="482.0" prefHeight="181.0" prefWidth="145.0" text="Label">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAllRoom" layoutX="303.0" layoutY="664.0" prefHeight="181.0" prefWidth="145.0" text="Label">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblUsedRoom" layoutX="174.0" layoutY="658.0" prefHeight="181.0" prefWidth="145.0" text="Label">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRemainRoom" layoutX="458.0" layoutY="692.0" prefHeight="181.0" prefWidth="145.0" text="Label">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

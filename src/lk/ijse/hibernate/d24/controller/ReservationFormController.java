@@ -9,13 +9,12 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lk.ijse.hibernate.d24.bo.BOFactory;
-import lk.ijse.hibernate.d24.bo.custom.impl.ReservationBOImpl;
+import lk.ijse.hibernate.d24.bo.custom.impl.RegisterBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
-import lk.ijse.hibernate.d24.dto.ReservationDTO;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
-import lk.ijse.hibernate.d24.entity.Reservation;
+import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.view.tdm.ReservationTM;
 
 
@@ -38,7 +37,7 @@ public class ReservationFormController {
 
     private final StudentBOImpl studentBO = (StudentBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.STUDENT);
     private final RoomBOImpl roomBO = (RoomBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
-    private final ReservationBOImpl reservationBO = (ReservationBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.RESERVATION);
+    private final RegisterBOImpl registerBO = (RegisterBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REGISTER);
 
     public void initialize(){
 
@@ -47,9 +46,6 @@ public class ReservationFormController {
         tblReservation.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("student_id"));
         tblReservation.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("room_type_id"));
         tblReservation.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("status"));
-
-
-        getAllReservation();
 
 
         tblReservation.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -69,51 +65,12 @@ public class ReservationFormController {
         loadCmbData();
     }
     public void btnAddOnAction(ActionEvent actionEvent) {
-        String res_id = txtResId.getText();
-        LocalDate date = dpdate.getValue();
-        String std_id = String.valueOf(cmbStd_id.getValue());
-        String room_type = String.valueOf(cmbRoomType.getValue());
-        String status = txtStatus.getText();
 
 
-        if (btnAdd.getText().equalsIgnoreCase("Add")) {
-
-            Reservation reservation = new Reservation(res_id, date, std_id, room_type, status);
-            boolean addReservation = reservationBO.saveReservation(reservation);
-
-            if (addReservation) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Reservation Added Successfully !").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Reservation Added Failed !").show();
-            }
-            getAllReservation();
-
-        } else if (btnAdd.getText().equalsIgnoreCase("Update")) {
-            Reservation reservation = new Reservation(res_id, date, std_id, room_type, status);
-            boolean updateReservation = reservationBO.updateReservation(reservation);
-            if (updateReservation) {
-                new Alert(Alert.AlertType.CONFIRMATION, "Reservation Updated Successfully !").show();
-            } else {
-                new Alert(Alert.AlertType.ERROR, "Reservation Updated Failed !").show();
-            }
-
-            btnAdd.setText("Add");
-            clearFields();
-            getAllReservation();
-            btnAdd.setDisable(false);
-        }
     }
 
     public void btnClearOnAction(ActionEvent actionEvent) {
-        boolean deleteReservation = reservationBO.deleteReservation(txtResId.getText());
 
-        if (deleteReservation) {
-            new Alert(Alert.AlertType.CONFIRMATION, "Reservation Deleted Successfully !").show();
-        } else {
-            new Alert(Alert.AlertType.WARNING, "Reservation Deleted Failed !").show();
-        }
-        getAllReservation();
-        clearFields();
     }
 
     private void loadCmbData(){
@@ -126,22 +83,8 @@ public class ReservationFormController {
         }
     }
 
-    public void getAllReservation(){
-        ArrayList<ReservationDTO> allreservation = reservationBO.getAllReservation();
 
-        tblReservation.getItems().clear();
 
-        for (ReservationDTO reservationDTO : allreservation) {
-            tblReservation.getItems().add(new ReservationTM(
-                    reservationDTO.getRes_id(),
-                    reservationDTO.getDate(),
-                    reservationDTO.getStudent_id(),
-                    reservationDTO.getRoom_type_id(),
-                    reservationDTO.getStatus()
-            ));
-        }
-
-    }
 
     public void clearFields() {
         txtResId.clear();
