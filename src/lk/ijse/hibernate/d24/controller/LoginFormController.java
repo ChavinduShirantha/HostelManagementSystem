@@ -5,16 +5,19 @@ import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hibernate.d24.bo.BOFactory;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
+import lk.ijse.hibernate.d24.dto.UserDTO;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @author : Chavindu
@@ -50,16 +53,22 @@ public class LoginFormController {
     }
 
     public void LoginOnAction(ActionEvent actionEvent) throws IOException {
-       /* ArrayList<UserDTO> allUser = userBO.getAllUser();
+        ArrayList<UserDTO> allUser = userBO.getAllUser();
 
-        for (UserDTO userDTO : allUser) {
+        if (txtUserName.getText().isEmpty() || pwdPassword.getText().isEmpty()) {
 
-            if(userDTO.getUser_name().equals(txtUserName.getText()) && userDTO.getPwd().equals(pwdPassword.getText())){*/
-        Navigation.navigate(Routes.Dashboard, pane);
-            /*}else{
-                lblError.setVisible(true);
+            new Alert(Alert.AlertType.ERROR, "Please fill all blank fields").show();
+
+        } else {
+            for (UserDTO userDTO : allUser) {
+
+                if (userDTO.getUser_name().equals(txtUserName.getText()) && userDTO.getPwd().equals(pwdPassword.getText())) {
+                    Navigation.navigate(Routes.Dashboard, pane);
+                } else {
+                    lblError.setVisible(true);
+                }
             }
-        }*/
+        }
 
     }
 
