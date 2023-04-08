@@ -7,6 +7,7 @@ import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -18,5 +19,6 @@ public interface RegisterBO extends SuperBO{
     boolean updateRegister(RegisterStudent dto);
     public RegisterStudent getRegister(String id) throws IOException;
     ArrayList<RegisterStudentDTO> getAllReg();
+    public List<RegisterStudentDTO> searchReservedRoomById(String id) throws IOException;
 
 }

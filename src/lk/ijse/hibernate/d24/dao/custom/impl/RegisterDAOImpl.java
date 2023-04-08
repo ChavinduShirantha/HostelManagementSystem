@@ -2,6 +2,7 @@ package lk.ijse.hibernate.d24.dao.custom.impl;
 
 import lk.ijse.hibernate.d24.dao.custom.RegisterDAO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
+import lk.ijse.hibernate.d24.entity.Room;
 import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.util.SessionFactoryConfig;
 import org.hibernate.Session;
@@ -10,6 +11,7 @@ import org.hibernate.query.Query;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -78,5 +80,25 @@ public class RegisterDAOImpl implements RegisterDAO {
         session.close();
 
         return st;
+    }
+
+    @Override
+    public List<RegisterStudent> searchReservedRoomById(String id) throws IOException {
+        Session session = SessionFactoryConfig.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM RegisterStudent WHERE room = :room_type_id";
+        Query query = session.createQuery(hql);
+
+        Room room = new Room();
+        room.setR_id(id);
+
+        query.setParameter("room_type_id", room);
+        List<RegisterStudent> r = query.list();
+
+        transaction.commit();
+        session.close();
+
+        return r;
     }
 }

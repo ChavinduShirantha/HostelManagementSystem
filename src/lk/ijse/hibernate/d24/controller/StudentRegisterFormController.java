@@ -21,6 +21,7 @@ import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -74,6 +75,7 @@ public class StudentRegisterFormController {
     private final RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
     public void initialize() throws IOException {
 
+        lblAvailable.setText("Available Or Not");
         cmbGender.getItems().addAll("Male","FeMale");
 
         for (StudentDTO dto : studentBO.getAllStudent()) {
@@ -99,17 +101,17 @@ public class StudentRegisterFormController {
                 txtQty.setText(String.valueOf(room.getQty()));
                 lblAllRoom.setText(String.valueOf(room.getQty()));
 
-               /* try {
-                    List<ReserveDTO> reserveDTOS = reservationBO.searchReservedRoomById(newValue);
+                try {
+                    List<RegisterStudentDTO> reserveDTOS = registerBO.searchReservedRoomById((String) newValue);
 
                     int count=0;
-                    for (ReserveDTO reserveDTO : reserveDTOS) {
+                    for (RegisterStudentDTO reserveDTO : reserveDTOS) {
                         count++;
                     }
 
                     int remainQty=Integer.parseInt(txtQty.getText())-count;
-                    lblUsedRooms.setText(String.valueOf(count));
-                    lblRemainingRooms.setText(String.valueOf(remainQty));
+                    lblUsedRoom.setText(String.valueOf(count));
+                    lblRemainRoom.setText(String.valueOf(remainQty));
 
                     if(remainQty==0){
                         lblAvailable.setText("Un-Available");
@@ -120,7 +122,7 @@ public class StudentRegisterFormController {
 
                 } catch (IOException e) {
                     e.printStackTrace();
-                }*/
+                }
             }
 
 

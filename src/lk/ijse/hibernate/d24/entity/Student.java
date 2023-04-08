@@ -39,6 +39,10 @@ public class Student implements SuperEntity {
         this.gender = gender;
     }
 
+    public Student(String stdId) {
+        this.std_id = stdId;
+    }
+
 
     public String getStd_id() {
         return std_id;

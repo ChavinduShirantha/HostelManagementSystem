@@ -5,6 +5,7 @@ import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -12,4 +13,5 @@ import java.io.IOException;
  **/
 public interface RegisterDAO extends CrudDAO<RegisterStudent,String> {
     public RegisterStudent getRegister(String id) throws IOException;
+    List<RegisterStudent> searchReservedRoomById(String id) throws IOException;
 }

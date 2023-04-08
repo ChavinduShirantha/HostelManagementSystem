@@ -18,9 +18,15 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import lk.ijse.hibernate.d24.bo.BOFactory;
+import lk.ijse.hibernate.d24.bo.custom.RegisterBO;
+import lk.ijse.hibernate.d24.bo.custom.RoomBO;
 import lk.ijse.hibernate.d24.bo.custom.impl.StudentBOImpl;
 import lk.ijse.hibernate.d24.bo.custom.impl.UserBOImpl;
+import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
+import lk.ijse.hibernate.d24.dto.RoomDTO;
+import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.dto.UserDTO;
+import lk.ijse.hibernate.d24.entity.Room;
 import lk.ijse.hibernate.d24.entity.User;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;
@@ -30,12 +36,23 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author : Chavindu
  * created : 3/28/2023-10:48 AM
  **/
 public class DashboardFormController {
+    @FXML
+    private Label lblFemale;
+    @FXML
+    private Label lblMale;
+    @FXML
+    private Label lblTotRoom;
+    @FXML
+    private Label lblTotUsedRoom;
+    @FXML
+    private Label lblTotAvailable;
     @FXML
     private ImageView imgRegister;
     @FXML
@@ -104,7 +121,8 @@ public class DashboardFormController {
 
     private final UserBOImpl userBO = (UserBOImpl) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
 
-
+    private final RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
+    private final RegisterBO registerBO = (RegisterBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REGISTER);
 
     public void initialize() {
         loadDate();
@@ -117,6 +135,38 @@ public class DashboardFormController {
         hide2.setVisible(false);
         txtGetPassword.setVisible(false);
         txtSetPassword.setVisible(false);
+
+
+            List<RoomDTO> roomDTOS = roomBO.getAllRoom();
+
+            int count=0;
+            int count2=0;
+            for (RoomDTO roomDTO : roomDTOS) {
+                count+=roomDTO.getQty();
+                count2++;
+            }
+            lblTotRoom.setText(String.valueOf(count));
+            int remainQty=Integer.parseInt(lblTotRoom.getText())-count2;
+            lblTotUsedRoom.setText(String.valueOf(count2));
+            lblTotAvailable.setText(String.valueOf(remainQty));
+
+
+        List<StudentDTO> studentDTOS = studentBO.getAllStudent();
+
+        int count1=0;
+        int countAll=0;
+        for (StudentDTO studentDTO : studentDTOS) {
+            countAll++;
+            if (studentDTO.getGender().equals("Male")){
+                count1++;
+            }
+        }
+        lblTotStudent.setText(String.valueOf(countAll));
+        int female=Integer.parseInt(lblTotStudent.getText())-count1;
+        lblMale.setText(String.valueOf(count1));
+        lblFemale.setText(String.valueOf(female));
+
+
     }
 
     public void loadDate() {

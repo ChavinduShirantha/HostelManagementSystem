@@ -32,6 +32,10 @@ public class Room implements SuperEntity{
         this.qty = qty;
     }
 
+    public Room(String roomId) {
+        this.r_id = roomId;
+    }
+
     public String getR_id() {
         return r_id;
     }

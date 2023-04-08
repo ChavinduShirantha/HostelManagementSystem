@@ -10,6 +10,7 @@ import lk.ijse.hibernate.d24.entity.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author : Chavindu
@@ -54,5 +55,24 @@ public class RegisterBOImpl implements RegisterBO {
         }
 
         return allReg;
+    }
+
+    @Override
+    public List<RegisterStudentDTO> searchReservedRoomById(String id) throws IOException {
+        List<RegisterStudent> reserves = registerDAO.searchReservedRoomById(id);
+
+        List<RegisterStudentDTO> reserveDTOS = new ArrayList<>();
+
+        for (RegisterStudent reserve : reserves) {
+            reserveDTOS.add(new RegisterStudentDTO(
+                    reserve.getRes_id(),
+                    reserve.getDate(),
+                    reserve.getStudent(),
+                    reserve.getRoom(),
+                    reserve.getStatus()
+            ));
+
+        }
+        return reserveDTOS;
     }
 }

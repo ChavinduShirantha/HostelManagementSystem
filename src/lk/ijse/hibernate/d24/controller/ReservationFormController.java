@@ -16,8 +16,9 @@ import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.entity.RegisterStudent;
+import lk.ijse.hibernate.d24.entity.Room;
+import lk.ijse.hibernate.d24.entity.Student;
 import lk.ijse.hibernate.d24.view.tdm.ReservationTM;
-import lk.ijse.hibernate.d24.view.tdm.StudentTM;
 
 
 import java.io.IOException;
@@ -68,13 +69,58 @@ public class ReservationFormController {
         clearFields();
         loadCmbData();
     }
-    public void btnAddOnAction(ActionEvent actionEvent) {
+    public void btnAddOnAction(ActionEvent actionEvent) throws IOException {
+        String regId=txtResId.getText();
+        LocalDate regDate=dpdate.getValue();
+        String std_id= String.valueOf((cmbStd_id.getValue()));
+        String roomId = String.valueOf((cmbRoomType.getValue()));
+        String status = txtStatus.getText();
 
 
+        if (btnAdd.getText().equalsIgnoreCase("Add")) {
+            Student student = new Student(std_id);
+            Room room = new Room(roomId);
+            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+
+            boolean add= registerBO.saveRegister(registerStudent);
+
+            if (add) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Added Successfully !").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Added Failed !").show();
+            }
+            getAllReservation();
+
+        } else if (btnAdd.getText().equalsIgnoreCase("Student")) {
+            Student student = new Student(std_id);
+            Room room = new Room(roomId);
+            RegisterStudent registerStudent = new RegisterStudent(regId, regDate, student, room,status);
+
+            boolean update = registerBO.updateRegister(registerStudent);
+            if (update) {
+                new Alert(Alert.AlertType.CONFIRMATION, "Updated Successfully !").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Updated Failed !").show();
+            }
+
+            btnAdd.setText("Student");
+            txtResId.setEditable(true);
+            clearFields();
+            getAllReservation();
+            btnAdd.setDisable(false);
+        }
     }
 
-    public void btnClearOnAction(ActionEvent actionEvent) {
+    public void btnClearOnAction(ActionEvent actionEvent) throws IOException {
+        boolean delete = registerBO.deleteRegister(txtResId.getText());
 
+        if (delete) {
+            new Alert(Alert.AlertType.CONFIRMATION, "Deleted Successfully !").show();
+        } else {
+            new Alert(Alert.AlertType.WARNING, "Deleted Failed !").show();
+        }
+        getAllReservation();
+        clearFields();
     }
 
     private void loadCmbData(){
