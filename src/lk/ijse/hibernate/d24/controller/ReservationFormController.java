@@ -152,7 +152,7 @@ public class ReservationFormController {
                     registerStudentDTO.getRes_id(),
                     registerStudentDTO.getDate(),
                     registerStudentDTO.getStudent().getStd_id(),
-                    registerStudentDTO.getRoom().getR_id(),
+                    registerStudentDTO.getRoom().getR_type(),
                     registerStudentDTO.getStatus()
             ));
         }
