@@ -26,7 +26,6 @@ import lk.ijse.hibernate.d24.dto.RegisterStudentDTO;
 import lk.ijse.hibernate.d24.dto.RoomDTO;
 import lk.ijse.hibernate.d24.dto.StudentDTO;
 import lk.ijse.hibernate.d24.dto.UserDTO;
-import lk.ijse.hibernate.d24.entity.RegisterStudent;
 import lk.ijse.hibernate.d24.entity.User;
 import lk.ijse.hibernate.d24.navigate.Navigation;
 import lk.ijse.hibernate.d24.navigate.Routes;

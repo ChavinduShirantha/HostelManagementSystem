@@ -11,7 +11,7 @@ import java.util.List;
  * created : 4/7/2023-6:12 PM
  **/
 public interface RegisterDAO extends CrudDAO<RegisterStudent, String> {
-    public RegisterStudent getRegister(String id) throws IOException;
+    RegisterStudent getRegister(String id) throws IOException;
 
     List<RegisterStudent> searchReservedRoomById(String id) throws IOException;
 }

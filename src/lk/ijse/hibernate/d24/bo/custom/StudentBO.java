@@ -19,6 +19,6 @@ public interface StudentBO extends SuperBO {
 
     boolean deleteStudent(String id);
 
-    public Student getStudent(String id) throws IOException;
+    Student getStudent(String id) throws IOException;
 
 }

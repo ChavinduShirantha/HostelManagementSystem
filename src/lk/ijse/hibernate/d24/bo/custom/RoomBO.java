@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author : Chavindu
  * created : 4/2/2023-9:33 AM
  **/
-public interface RoomBO extends SuperBO{
+public interface RoomBO extends SuperBO {
     ArrayList<RoomDTO> getAllRoom();
 
     boolean saveRoom(Room dto);
@@ -19,5 +19,5 @@ public interface RoomBO extends SuperBO{
 
     boolean deleteRoom(String id);
 
-    public Room getRoom(String id) throws IOException;
+    Room getRoom(String id) throws IOException;
 }

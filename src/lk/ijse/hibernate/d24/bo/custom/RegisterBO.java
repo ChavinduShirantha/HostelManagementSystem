@@ -18,10 +18,10 @@ public interface RegisterBO extends SuperBO {
 
     boolean updateRegister(RegisterStudent dto);
 
-    public RegisterStudent getRegister(String id) throws IOException;
+    RegisterStudent getRegister(String id) throws IOException;
 
     ArrayList<RegisterStudentDTO> getAllReg();
 
-    public List<RegisterStudentDTO> searchReservedRoomById(String id) throws IOException;
+    List<RegisterStudentDTO> searchReservedRoomById(String id) throws IOException;
 
 }

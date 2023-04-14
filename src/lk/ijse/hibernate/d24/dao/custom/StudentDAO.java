@@ -10,5 +10,5 @@ import java.io.IOException;
  * created : 3/29/2023-10:50 AM
  **/
 public interface StudentDAO extends CrudDAO<Student, String> {
-    public Student getStudent(String id) throws IOException;
+    Student getStudent(String id) throws IOException;
 }
