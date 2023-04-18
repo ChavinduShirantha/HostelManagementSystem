@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hibernate.d24.bo.BOFactory;
@@ -50,9 +52,14 @@ public class LoginFormController {
         showpwd.setVisible(true);
         txtPwd.setVisible(false);
         lblError.setVisible(false);
+        txtUserName.requestFocus();
     }
 
     public void LoginOnAction(ActionEvent actionEvent) throws IOException {
+        login();
+    }
+
+    public void login() throws IOException {
         ArrayList<UserDTO> allUser = userBO.getAllUser();
 
         if (txtUserName.getText().isEmpty() || pwdPassword.getText().isEmpty()) {
@@ -74,8 +81,8 @@ public class LoginFormController {
                 }
             }
         }
-
     }
+
 
     public void btnSignUpOnAction(ActionEvent actionEvent) throws IOException {
         Navigation.navigate(Routes.Signup, pane);
@@ -95,5 +102,17 @@ public class LoginFormController {
         showpwd.setVisible(false);
         hidePwd.setVisible(true);
         txtPwd.setVisible(true);
+    }
+
+    public void unameKeyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            pwdPassword.requestFocus();
+        }
+    }
+
+    public void pwdKeyPressed(KeyEvent keyEvent) throws IOException {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            login();
+        }
     }
 }

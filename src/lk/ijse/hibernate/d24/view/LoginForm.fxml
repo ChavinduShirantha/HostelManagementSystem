@@ -34,7 +34,7 @@
                   <Image url="@assest/images/userName.png" />
                </image>
             </ImageView>
-            <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="238.0" layoutY="155.0" prefHeight="26.0" prefWidth="400.0" promptText="User Name">
+            <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="238.0" layoutY="155.0" onKeyPressed="#unameKeyPressed" prefHeight="26.0" prefWidth="400.0" promptText="User Name">
                <font>
                   <Font size="24.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXPasswordField fx:id="pwdPassword" labelFloat="true" layoutX="237.0" layoutY="257.0" prefHeight="26.0" prefWidth="400.0" promptText="Password">
+            <JFXPasswordField fx:id="pwdPassword" labelFloat="true" layoutX="237.0" layoutY="257.0" onKeyPressed="#pwdKeyPressed" prefHeight="26.0" prefWidth="400.0" promptText="Password">
                <font>
                   <Font size="24.0" />
                </font>
