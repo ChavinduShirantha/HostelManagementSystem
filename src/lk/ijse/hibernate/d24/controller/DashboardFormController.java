@@ -340,4 +340,5 @@ public class DashboardFormController {
     public void manageRegisterOnAction(MouseEvent mouseEvent) throws IOException {
         Navigation.navigate(Routes.REGISTER, pane1);
     }
+
 }
