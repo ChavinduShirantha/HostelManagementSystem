@@ -26,9 +26,12 @@ public class AppInitializer extends Application {
         URL resource = getClass().getResource("/lk/ijse/hibernate/d24/view/LoginForm.fxml");
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
+
         primaryStage.setTitle("D24 Hostel");
         primaryStage.setResizable(false);
+
         Image image = new Image("/lk/ijse/hibernate/d24/view/assest/images/logo.png");
+
         primaryStage.getIcons().add(image);
         primaryStage.setScene(scene);
         primaryStage.centerOnScreen();
