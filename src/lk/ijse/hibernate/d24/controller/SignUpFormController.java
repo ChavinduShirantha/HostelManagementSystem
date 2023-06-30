@@ -82,7 +82,7 @@ public class SignUpFormController {
 
     public void btnSignUpOnAction(ActionEvent actionEvent) throws IOException {
         String userName = txtUserName.getText();
-        String pwd = txtPassword.getText();
+        String pwd = pwdPassword.getText();
         String name = txtName.getText();
         String surname = txtSurName.getText();
         String city = txtCity.getText();
